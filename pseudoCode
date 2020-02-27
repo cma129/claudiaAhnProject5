@@ -1,0 +1,24 @@
+endpoint:
+https://api.punkapi.com/v2/beers
+documentation:
+https://punkapi.com/documentation/v2
+
+Create 'What type do you want?' drop down menu (options: Pale Lager, Pilsner, IPA, Dark Lager, Stout, Porter)
+Once user selects one type, store user input into variable 'userType'.
+Make a GET request from https://api.punkapi.com/v2/beers with Axios (ex."name": "IPA")
+Store received data into 'typePick' variable
+Display userType and 3 randomly selected tracks (using Math.random) from 'typePick' variable
+
+Create 'What do you want to pair it with?' form with text input and submit button
+Once user submits food, store user input into variable 'userFood'.
+Make a GET request from https://api.punkapi.com/v2/beers with Axios (ex."food": "fries")
+Store received data into 'foodPick' variable
+Display userFood and 3 randomly selected tracks (using Math.random) from 'foodPick' variable
+If there are no results, error: "Sorry, there are no results"
+Create an IF statement to check if typePick has the same beer with foodPick and make sure different beers are displayed
+
+For each individual beer displayed:
+Make 'add to beer list' button appear on hover
+When button is clicked, clicked beer is stored in 'userBeer' variable (using function)
+
+Create empty 'userBeers' array and push 'userBeer'
