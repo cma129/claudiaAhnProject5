@@ -5,9 +5,10 @@ https://punkapi.com/documentation/v2
 
 Create 'What type do you want?' drop down menu (options: Pale Lager, Pilsner, IPA, Dark Lager, Stout, Porter)
 Once user selects one type, store user input into variable 'userType'.
-Make a GET request from https://api.punkapi.com/v2/beers with Axios (ex."name": "IPA")
+Make a GET request from https://api.punkapi.com/v2/beers with Axios (ex."description": "IPA")
 Store received data into 'typePick' variable
-Display userType and 3 randomly selected tracks (using Math.random) from 'typePick' variable
+Display userType and 3 randomly selected tracks (using                     const randomIndex = Math.floor(Math.random() * possibleNumbers.length);
+                    return possibleNumbers[randomIndex];) from 'typePick' variable
 
 Create 'What do you want to pair it with?' form with text input and submit button
 Once user submits food, store user input into variable 'userFood'.
