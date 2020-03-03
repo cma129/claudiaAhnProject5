@@ -33,9 +33,12 @@ class Flavour extends Component {
                         </div>
                     </form>
                     <div>
-                    <h2>pick for you</h2>
+                        <h2>pick for you</h2>
                         <div className="barrelContainer">
-                            <img className="beerBarrel" src={require("../assets/beerBarrel.png")} alt="Beer barrel" />
+                            <img className="beerBarrel beerBarrelFlavour" src={ this.props.flavourImgToDisplay ? this.props.flavourImgToDisplay : require("../assets/beerBarrel.png") } alt="Beer barrel" />
+                            <div className="overlay">
+                            <img className="plus" src={require("../assets/plus.png")} alt="Click to add to selection" />
+                            </div>
                         </div>
                     </div>
             </section>

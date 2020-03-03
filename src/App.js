@@ -1,3 +1,6 @@
+// Planning to change 'require' to import for static images
+// Planning to display custom error messages when options don't exist.
+
 import React, { Component } from 'react';
 import './index.css';
 
@@ -33,87 +36,78 @@ class App extends Component {
     });
   }
 
-// Get user selection from Flavour component
-whichFlavour = (e, userFlavour) => {
-  e.preventDefault();
-  this.setState({
-    userFlavourSelection: userFlavour
-  }, () => this.findFlavour(userFlavour))
-}
-
-// Get user selection from Food component
-whichFood = (e, userFood) => {
-  e.preventDefault();
-  this.setState({
-    userFoodSelection: userFood
-  }, () => this.findFood(userFood))
-}
-
-// Use flavour user selection to filter through allBeers array, and save to state.
-findFlavour = () => {
-  const copyOfAllBeers = [...this.state.allBeers];
-  const randomFlavours = copyOfAllBeers.filter( (beer) => {
-    return beer.description.includes(this.state.userFlavourSelection)
-  })
-
-  // Pull random one
-  const chooseRandomFlavour = (randomFlavours) => {
-    const num = Math.floor( Math.random() * (randomFlavours.length+1));
-    const oneFlavour = randomFlavours[ num ];
-    const oneFlavourImg = oneFlavour.image_url;
-  console.log(oneFlavourImg);
+  // Get user selection from Flavour component
+  whichFlavour = (e, userFlavour) => {
+    e.preventDefault();
+    this.setState({
+      userFlavourSelection: userFlavour
+    }, () => this.findFlavour(userFlavour))
   }
-}
-// Display image of beer
-// const displayFlavour = () => {
-  // return (
-  //   <img
-  //     scr="oneFlavourImg"
-  //     alt="oneFlavour.name"
-  //     />
-  //   );
-  // }
 
-//   this.setState({
-//     copyOfAllBeers: displayFlavour
-//   }, () => {
-//     // console.log(this.setState);
-//   })
+  // Get user selection from Food component
+  whichFood = (e, userFood) => {
+    e.preventDefault();
+    this.setState({
+      userFoodSelection: userFood
+    }, () => this.findFood(userFood))
+  }
 
-
-
-// Use food user selection to filter through allBeers array, and save to state.
-findFood = () => {
-  const randomFoods = []
-  const copyOfAllBeers = [...this.state.allBeers];
-  copyOfAllBeers.forEach( (beer) => {
-    let foodPairing = ''
-    beer.food_pairing.forEach((pair) => {
-      foodPairing = foodPairing + pair
+  // Use flavour user selection to filter through allBeers array, and save to state.
+  findFlavour = () => {
+    const copyOfAllBeers = [...this.state.allBeers];
+    console.log('all', copyOfAllBeers);
+    const randomFlavours = copyOfAllBeers.filter( (beer) => {
+      return beer.description.includes(this.state.userFlavourSelection)    
     })
-    if (foodPairing.includes(this.state.userFoodSelection)){
-      randomFoods.push(beer)
-    } else {
-      const foodErrorMessage = "Sorry, there's no beer that matches your food pairing selection 😯";
-      console.log(foodErrorMessage);
+    console.log('for flavour', randomFlavours);
+    // Pull random one
+    const chooseRandomFlavour = (randomFlavours) => {
+      const num = Math.floor( Math.random() * (randomFlavours.length));
+      const oneFlavour = randomFlavours[ num ];
+      const oneFlavourImg = oneFlavour.image_url;
+      return oneFlavourImg;
     }
-  })
-  
-  // pull random one
-  const chooseRandomFood = () => {
-    const num = Math.floor( Math.random() * (randomFoods.length+1));
-    const oneFood = randomFoods[ num ];
-    const oneFoodImg = oneFood.image_url;
-  console.log(oneFoodImg);
+    this.setState({
+      flavourImg: chooseRandomFlavour(randomFlavours),
+    })
   }
-  return randomFoods;
 
-  // this.setState({
-  //   copyOfAllBeers: beerFood
-  // }, () => {
-  //   console.log(this.setState);
-  // })
-
+  // Use food user selection to filter through allBeers array, and save to state.
+  findFood = () => {
+    const randomFoods = []
+    const copyOfAllBeers = [...this.state.allBeers];
+    copyOfAllBeers.forEach( (beer) => {
+      let foodPairing = ''
+      beer.food_pairing.forEach((pair) => {
+        foodPairing = foodPairing + pair
+      })
+      if (foodPairing.includes(this.state.userFoodSelection)){
+        randomFoods.push(beer);
+        console.log(randomFoods);
+        return randomFoods;
+      } else {
+          const foodErrorMessage = "Sorry, there's no beer that matches your food pairing selection 😯";
+          // render(foodErrorMessage, document.querySelector('#flavourError'));
+          console.log('error', foodErrorMessage);
+          this.setState({
+            foodError: foodErrorMessage
+          })
+      }
+    })
+    
+    // pull random one
+    const chooseRandomFood = (randomFoods) => {
+      const num = Math.floor( Math.random() * (randomFoods.length));
+      const oneFood = randomFoods[ num ];
+      const oneFoodImg = oneFood.image_url;
+      console.log(num)
+      console.log(oneFoodImg);
+      return oneFoodImg;
+    }
+    this.setState({
+      foodImg: chooseRandomFood(randomFoods),
+    })
+  }
 
   //Add to selection on click
   // const myBeerSelection = [];
@@ -126,19 +120,15 @@ findFood = () => {
 
   //Remove from selection on click
   //myBeerSelection.REMOVE(this)
-
-
-  }
-
-
+  
   render () {
     return (
       <div className="App">
         <Header />
         <main className="wrapper">
           <div className="flavourFoodContainer">
-            <Flavour flavourGettingFunction={this.whichFlavour}/>
-            <Food foodGettingFunction={this.whichFood} />
+            <Flavour flavourGettingFunction={this.whichFlavour} flavourImgToDisplay={this.state.flavourImg}/>
+            <Food foodGettingFunction={this.whichFood} foodImgToDisplay={this.state.foodImg}/>
           </div>
           <Selection />
         </main>
