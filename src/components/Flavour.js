@@ -26,7 +26,7 @@ class Flavour extends Component {
                                 <option value="citrus">Citrus</option>
                                 <option value="spicy">Spicy</option>
                             </select>
-                            <button type="submit" onClick={ (e) => this.props.flavourGettingFunction(e, this.state.userFlavour) }
+                            <button className="button" type="submit" onClick={ (e) => this.props.flavourGettingFunction(e, this.state.userFlavour) }
                             >
                                 <img className="beerTab" src={require("../assets/beerTab.png")} alt="Beer tab" />Show me a beer!
                             </button>
@@ -37,7 +37,7 @@ class Flavour extends Component {
                         <div className="barrelContainer">
                             <img className="beerBarrel beerBarrelFlavour" src={ this.props.flavourImgToDisplay ? this.props.flavourImgToDisplay : require("../assets/beerBarrel.png") } alt="Beer barrel" />
                             <div className="overlay">
-                            <img className="plus" src={require("../assets/plus.png")} alt="Click to add to selection" />
+                                <button className="plus" onClick={ (e) => this.props.addingToSelection(this.state.userFlavour) }><img src={require("../assets/plus.png")} alt="Click to add to selection" /></button>
                             </div>
                         </div>
                     </div>
@@ -45,5 +45,4 @@ class Flavour extends Component {
         );
     }
 }
-
 export default Flavour;

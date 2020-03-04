@@ -1,5 +1,7 @@
 // Planning to change 'require' to import for static images
 // Planning to display custom error messages when options don't exist.
+// Planning to create a function to let user to click on beer when they want to add to their selection rather than having it added automatically
+// Planning to display more info on beer on click
 
 import React, { Component } from 'react';
 import './index.css';
@@ -19,7 +21,9 @@ class App extends Component {
     this.state = {
       allBeers: [],
       userFlavourSelection: "",
-      userFoodSelection: ""
+      userFoodSelection: "",
+      oneFlavourImg: "",
+      oneFoodImg: "",
     }
   }
 
@@ -55,16 +59,17 @@ class App extends Component {
   // Use flavour user selection to filter through allBeers array, and save to state.
   findFlavour = () => {
     const copyOfAllBeers = [...this.state.allBeers];
-    console.log('all', copyOfAllBeers);
     const randomFlavours = copyOfAllBeers.filter( (beer) => {
       return beer.description.includes(this.state.userFlavourSelection)    
     })
-    console.log('for flavour', randomFlavours);
     // Pull random one
     const chooseRandomFlavour = (randomFlavours) => {
       const num = Math.floor( Math.random() * (randomFlavours.length));
       const oneFlavour = randomFlavours[ num ];
       const oneFlavourImg = oneFlavour.image_url;
+      this.setState({
+        oneFlavourImg
+      })
       return oneFlavourImg;
     }
     this.setState({
@@ -73,10 +78,11 @@ class App extends Component {
   }
 
   // Use food user selection to filter through allBeers array, and save to state.
-  findFood = () => {
+  findFood = (userFood) => {
+    console.log(userFood)
     const randomFoods = []
     const copyOfAllBeers = [...this.state.allBeers];
-    copyOfAllBeers.forEach( (beer) => {
+    copyOfAllBeers.forEach(beer => {
       let foodPairing = ''
       beer.food_pairing.forEach((pair) => {
         foodPairing = foodPairing + pair
@@ -85,13 +91,11 @@ class App extends Component {
         randomFoods.push(beer);
         console.log(randomFoods);
         return randomFoods;
-      } else {
-          const foodErrorMessage = "Sorry, there's no beer that matches your food pairing selection 😯";
-          // render(foodErrorMessage, document.querySelector('#flavourError'));
-          console.log('error', foodErrorMessage);
-          this.setState({
-            foodError: foodErrorMessage
-          })
+        // PLANNING TO MAKE CUSTOM ERROR MSG
+      // } else {
+      //     const foodErrorMessage = "Sorry, there's no beer that matches your food pairing selection 😯";
+      //     render(foodErrorMessage, document.querySelector('#flavourError'));
+      //     console.log('error', foodErrorMessage);
       }
     })
     
@@ -100,8 +104,9 @@ class App extends Component {
       const num = Math.floor( Math.random() * (randomFoods.length));
       const oneFood = randomFoods[ num ];
       const oneFoodImg = oneFood.image_url;
-      console.log(num)
-      console.log(oneFoodImg);
+      this.setState({
+        oneFoodImg
+      })
       return oneFoodImg;
     }
     this.setState({
@@ -109,6 +114,7 @@ class App extends Component {
     })
   }
 
+  // PLANNING TO MAKE A FUNCTION HERE FOR SELECTION
   //Add to selection on click
   // const myBeerSelection = [];
   // if (myBeerSelection.length < 3) {
@@ -117,7 +123,6 @@ class App extends Component {
   //   const selectionErrorMessage = "Sorry, you already have 3 picks in your selection. Please remove some and try adding again."
   //   console.log(selectionErrorMessage);
   // }
-
   //Remove from selection on click
   //myBeerSelection.REMOVE(this)
   
@@ -130,7 +135,7 @@ class App extends Component {
             <Flavour flavourGettingFunction={this.whichFlavour} flavourImgToDisplay={this.state.flavourImg}/>
             <Food foodGettingFunction={this.whichFood} foodImgToDisplay={this.state.foodImg}/>
           </div>
-          <Selection />
+          <Selection oneFlavourImg={this.state.oneFlavourImg} oneFoodImg={this.state.oneFoodImg}/>
         </main>
         <Footer />
       </div>
