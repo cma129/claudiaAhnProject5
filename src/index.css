@@ -406,6 +406,11 @@ footer p {
   label {
     font-size: 30px;
   }
+  
+  .Food,
+  .Flavour {
+    height: 90vh;
+  }
 
   h2 {
     font-size: 20px;
@@ -418,7 +423,13 @@ footer p {
 
 /* Mobile landscape */
 @media(max-height: 430px) {
-  .App {
+  .App,  
+  .Food,
+  .Flavour {
     height: auto;
+  }
+
+  .cmhLogo {
+    display: none;
   }
 }
