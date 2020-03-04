@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/claudiaAhnProject5/static/css/main.dbbf611c.chunk.css",
+    "main.css": "/claudiaAhnProject5/static/css/main.8857e21c.chunk.css",
     "main.js": "/claudiaAhnProject5/static/js/main.1bf381ab.chunk.js",
     "main.js.map": "/claudiaAhnProject5/static/js/main.1bf381ab.chunk.js.map",
     "runtime-main.js": "/claudiaAhnProject5/static/js/runtime-main.9aac9e39.js",
@@ -8,9 +8,9 @@
     "static/js/2.201923a0.chunk.js": "/claudiaAhnProject5/static/js/2.201923a0.chunk.js",
     "static/js/2.201923a0.chunk.js.map": "/claudiaAhnProject5/static/js/2.201923a0.chunk.js.map",
     "index.html": "/claudiaAhnProject5/index.html",
-    "precache-manifest.d609b02039325325e0feda0ea1ac173a.js": "/claudiaAhnProject5/precache-manifest.d609b02039325325e0feda0ea1ac173a.js",
+    "precache-manifest.96717b0339450c915fe1bb29460f7913.js": "/claudiaAhnProject5/precache-manifest.96717b0339450c915fe1bb29460f7913.js",
     "service-worker.js": "/claudiaAhnProject5/service-worker.js",
-    "static/css/main.dbbf611c.chunk.css.map": "/claudiaAhnProject5/static/css/main.dbbf611c.chunk.css.map",
+    "static/css/main.8857e21c.chunk.css.map": "/claudiaAhnProject5/static/css/main.8857e21c.chunk.css.map",
     "static/js/2.201923a0.chunk.js.LICENSE.txt": "/claudiaAhnProject5/static/js/2.201923a0.chunk.js.LICENSE.txt",
     "static/media/beerBarrel.png": "/claudiaAhnProject5/static/media/beerBarrel.4fbd101a.png",
     "static/media/cmhLogo.png": "/claudiaAhnProject5/static/media/cmhLogo.579b0639.png"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.9aac9e39.js",
     "static/js/2.201923a0.chunk.js",
-    "static/css/main.dbbf611c.chunk.css",
+    "static/css/main.8857e21c.chunk.css",
     "static/js/main.1bf381ab.chunk.js"
   ]
 }
