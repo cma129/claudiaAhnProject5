@@ -79,7 +79,6 @@ class App extends Component {
 
   // Use food user selection to filter through allBeers array, and save to state.
   findFood = (userFood) => {
-    console.log(userFood)
     const randomFoods = []
     const copyOfAllBeers = [...this.state.allBeers];
     copyOfAllBeers.forEach(beer => {
@@ -89,7 +88,6 @@ class App extends Component {
       })
       if (foodPairing.includes(this.state.userFoodSelection)){
         randomFoods.push(beer);
-        console.log(randomFoods);
         return randomFoods;
         // PLANNING TO MAKE CUSTOM ERROR MSG
       // } else {

@@ -109,8 +109,11 @@ main {
   width: 45%;
   border: 5px solid #231f20;
   border-radius: 20px;
-  padding: 3%;
+  padding: 2% 2% 0;
   line-height: 4em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 form {
@@ -119,16 +122,16 @@ form {
 }
 
 label {
-  font-size: 60px;
+  font-size: 50px;
   line-height: 1em;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .selectionLine {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 select,
@@ -177,14 +180,15 @@ h2 {
 
 .barrelContainer {
   display: flex;
+  align-items: center;
   position: relative;
 }
 
 .beerBarrelFlavour,
 .beerBarrelFood {
-  width: auto;
-  height: 300px;
-  margin: 20px auto;
+  width: 19%;
+  height: 19%;
+  margin: 6px auto;
 }
 
 .overlay {
@@ -192,6 +196,7 @@ h2 {
     width: 100%;
     height: 100%;
     top: 0; left: 0;
+
 }
 
 .barrelContainer:hover .overlay {
@@ -211,14 +216,14 @@ h2 {
     width: 50px;
     height: 50px;
     position: absolute;
-    left: 45.5%;
-    top: 43%;
+    left: 45%;
+    top: 30%;
 }
 
 .beerBarrelSelection {
-  width: auto;
-  height: 150px;
-  margin: 5px auto;
+  width: 13%;
+  height: 13%;
+  margin: 3px auto;
 }
 
 .beerBarrel:nth-of-type(2) {
@@ -227,6 +232,12 @@ h2 {
 
 .Selection {
   margin-top: 120px;
+  width: 55%;
+  padding: 5%;
+}
+
+.Selection h2 {
+  padding-bottom: 40px;
 }
 
 /* Footer styles */
@@ -245,6 +256,15 @@ footer p {
 
 /* Desktop */
 @media(max-width: 1200px) {
+  .wrapper {
+    width: 90%;
+  }
+
+  .Flavour,
+  .Food {
+    width: 49%;
+  }
+
   select,
   .button,
   input {
@@ -272,15 +292,6 @@ footer p {
 
 /* Small desktop */
 @media(max-width: 990px) {
-  .wrapper {
-      width: 90%;
-  }
-
-  .Flavour,
-  .Food {
-  width: 49%;
-  }
-
   .Selection {
     width: 60%;
   }
@@ -354,7 +365,7 @@ footer p {
 
   .Food,
   .Flavour {
-    height: 75vh;
+    height: 80vh;
   }
 
   .Food,
@@ -363,7 +374,7 @@ footer p {
   }
 
   label {
-    font-size: 40px;
+    font-size: 35px;
     margin-bottom: 10px;
   }
 
@@ -393,7 +404,7 @@ footer p {
   }
 
   label {
-    font-size: 35px;
+    font-size: 30px;
   }
 
   h2 {

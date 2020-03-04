@@ -4,15 +4,10 @@ class Selection extends Component {
     constructor() {
         super();
         this.state = {
-            oneFoodImg: '',
+            oneFoodImg: ''
         }
     }
 
-    // componentDidUpdate() {
-    //     this.setState({
-    //         oneFoodImg: this.props.oneFoodImg
-    //     })
-    // }
     render() {
         return(
             <section className="Selection">
@@ -23,10 +18,11 @@ class Selection extends Component {
                     <img className="beerBarrel beerBarrelSelection" src={require("../assets/beerBarrel3.png")} alt="Beer barrel" />
                 </div>
             </section>
-        );
+        )
     }
 }
 
 export default Selection;
+
 
 
