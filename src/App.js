@@ -1,4 +1,3 @@
-// Planning to change 'require' to import for static images
 // Planning to display custom error messages when options don't exist.
 // Planning to create a function to let user to click on beer when they want to add to their selection rather than having it added automatically
 // Planning to display more info on beer on click
@@ -7,6 +6,7 @@ import React, { Component } from 'react';
 import './index.css';
 
 import axios from 'axios';
+import swal from 'sweetalert';
 
 import Header from './components/Header';
 import Flavour from './components/Flavour';
@@ -89,28 +89,36 @@ class App extends Component {
       if (foodPairing.includes(this.state.userFoodSelection)){
         randomFoods.push(beer);
         return randomFoods;
-        // PLANNING TO MAKE CUSTOM ERROR MSG
-      // } else {
-      //     const foodErrorMessage = "Sorry, there's no beer that matches your food pairing selection 😯";
-      //     render(foodErrorMessage, document.querySelector('#flavourError'));
-      //     console.log('error', foodErrorMessage);
       }
     })
-    
     // pull random one
-    const chooseRandomFood = (randomFoods) => {
-      const num = Math.floor( Math.random() * (randomFoods.length));
-      const oneFood = randomFoods[ num ];
-      const oneFoodImg = oneFood.image_url;
-      this.setState({
-        oneFoodImg
-      })
-      return oneFoodImg;
-    }
-    this.setState({
-      foodImg: chooseRandomFood(randomFoods),
-    })
+    if(randomFoods.length > 0){
+      const chooseRandomFood = (randomFoods) => {
+        const num = Math.floor( Math.random() * (randomFoods.length));
+        const oneFood = randomFoods[ num ];
+        const oneFoodImg = oneFood.image_url;
+        this.setState({
+                oneFoodImg
+              })
+              return oneFoodImg;
+            }
+            this.setState({
+              foodImg: chooseRandomFood(randomFoods),
+            })
+        // Custom error message
+      } else {
+          const foodErrorMessage = "There's no beer that matches this food pairing 😯";
+          swal({
+            title: "Sorry",
+            text: foodErrorMessage,
+            dangerMode: true,
+          });
+      }
   }
+
+  // Beer info on hover (sweet alert)
+  // beer.name, beer.tagLine
+
 
   // PLANNING TO MAKE A FUNCTION HERE FOR SELECTION
   //Add to selection on click
@@ -129,6 +137,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <main className="wrapper">
+          <div className="picks" id="picks"></div>
           <div className="flavourFoodContainer">
             <Flavour flavourGettingFunction={this.whichFlavour} flavourImgToDisplay={this.state.flavourImg}/>
             <Food foodGettingFunction={this.whichFood} foodImgToDisplay={this.state.foodImg}/>
