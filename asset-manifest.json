@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/claudiaAhnProject5/static/css/main.8857e21c.chunk.css",
-    "main.js": "/claudiaAhnProject5/static/js/main.1bf381ab.chunk.js",
-    "main.js.map": "/claudiaAhnProject5/static/js/main.1bf381ab.chunk.js.map",
+    "main.css": "/claudiaAhnProject5/static/css/main.dff9e30d.chunk.css",
+    "main.js": "/claudiaAhnProject5/static/js/main.62ab8a92.chunk.js",
+    "main.js.map": "/claudiaAhnProject5/static/js/main.62ab8a92.chunk.js.map",
     "runtime-main.js": "/claudiaAhnProject5/static/js/runtime-main.9aac9e39.js",
     "runtime-main.js.map": "/claudiaAhnProject5/static/js/runtime-main.9aac9e39.js.map",
-    "static/js/2.201923a0.chunk.js": "/claudiaAhnProject5/static/js/2.201923a0.chunk.js",
-    "static/js/2.201923a0.chunk.js.map": "/claudiaAhnProject5/static/js/2.201923a0.chunk.js.map",
+    "static/js/2.c4fb6ec2.chunk.js": "/claudiaAhnProject5/static/js/2.c4fb6ec2.chunk.js",
+    "static/js/2.c4fb6ec2.chunk.js.map": "/claudiaAhnProject5/static/js/2.c4fb6ec2.chunk.js.map",
     "index.html": "/claudiaAhnProject5/index.html",
-    "precache-manifest.96717b0339450c915fe1bb29460f7913.js": "/claudiaAhnProject5/precache-manifest.96717b0339450c915fe1bb29460f7913.js",
+    "precache-manifest.9dd5d829c51337027d566673b183e257.js": "/claudiaAhnProject5/precache-manifest.9dd5d829c51337027d566673b183e257.js",
     "service-worker.js": "/claudiaAhnProject5/service-worker.js",
-    "static/css/main.8857e21c.chunk.css.map": "/claudiaAhnProject5/static/css/main.8857e21c.chunk.css.map",
-    "static/js/2.201923a0.chunk.js.LICENSE.txt": "/claudiaAhnProject5/static/js/2.201923a0.chunk.js.LICENSE.txt",
+    "static/css/main.dff9e30d.chunk.css.map": "/claudiaAhnProject5/static/css/main.dff9e30d.chunk.css.map",
+    "static/js/2.c4fb6ec2.chunk.js.LICENSE.txt": "/claudiaAhnProject5/static/js/2.c4fb6ec2.chunk.js.LICENSE.txt",
     "static/media/beerBarrel.png": "/claudiaAhnProject5/static/media/beerBarrel.4fbd101a.png",
-    "static/media/cmhLogo.png": "/claudiaAhnProject5/static/media/cmhLogo.579b0639.png"
+    "static/media/beerBarrel2.png": "/claudiaAhnProject5/static/media/beerBarrel2.5a25c8b4.png"
   },
   "entrypoints": [
     "static/js/runtime-main.9aac9e39.js",
-    "static/js/2.201923a0.chunk.js",
-    "static/css/main.8857e21c.chunk.css",
-    "static/js/main.1bf381ab.chunk.js"
+    "static/js/2.c4fb6ec2.chunk.js",
+    "static/css/main.dff9e30d.chunk.css",
+    "static/js/main.62ab8a92.chunk.js"
   ]
 }
