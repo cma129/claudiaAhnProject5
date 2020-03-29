@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/myBeerSelection/static/css/main.dff9e30d.chunk.css",
-    "main.js": "/myBeerSelection/static/js/main.2cf6deaa.chunk.js",
-    "main.js.map": "/myBeerSelection/static/js/main.2cf6deaa.chunk.js.map",
+    "main.css": "/myBeerSelection/static/css/main.b600557e.chunk.css",
+    "main.js": "/myBeerSelection/static/js/main.d39fdd89.chunk.js",
+    "main.js.map": "/myBeerSelection/static/js/main.d39fdd89.chunk.js.map",
     "runtime-main.js": "/myBeerSelection/static/js/runtime-main.1c8af0f1.js",
     "runtime-main.js.map": "/myBeerSelection/static/js/runtime-main.1c8af0f1.js.map",
-    "static/js/2.c4fb6ec2.chunk.js": "/myBeerSelection/static/js/2.c4fb6ec2.chunk.js",
-    "static/js/2.c4fb6ec2.chunk.js.map": "/myBeerSelection/static/js/2.c4fb6ec2.chunk.js.map",
+    "static/js/2.19d1509f.chunk.js": "/myBeerSelection/static/js/2.19d1509f.chunk.js",
+    "static/js/2.19d1509f.chunk.js.map": "/myBeerSelection/static/js/2.19d1509f.chunk.js.map",
     "index.html": "/myBeerSelection/index.html",
-    "precache-manifest.ee8b2fc3b9deab99f676f7dd31278eca.js": "/myBeerSelection/precache-manifest.ee8b2fc3b9deab99f676f7dd31278eca.js",
+    "precache-manifest.1405d9d198c38c86eeb4d7a09c599501.js": "/myBeerSelection/precache-manifest.1405d9d198c38c86eeb4d7a09c599501.js",
     "service-worker.js": "/myBeerSelection/service-worker.js",
-    "static/css/main.dff9e30d.chunk.css.map": "/myBeerSelection/static/css/main.dff9e30d.chunk.css.map",
-    "static/js/2.c4fb6ec2.chunk.js.LICENSE.txt": "/myBeerSelection/static/js/2.c4fb6ec2.chunk.js.LICENSE.txt",
+    "static/css/main.b600557e.chunk.css.map": "/myBeerSelection/static/css/main.b600557e.chunk.css.map",
+    "static/js/2.19d1509f.chunk.js.LICENSE.txt": "/myBeerSelection/static/js/2.19d1509f.chunk.js.LICENSE.txt",
     "static/media/beerBarrel.png": "/myBeerSelection/static/media/beerBarrel.4fbd101a.png",
     "static/media/beerBarrel2.png": "/myBeerSelection/static/media/beerBarrel2.5a25c8b4.png"
   },
   "entrypoints": [
     "static/js/runtime-main.1c8af0f1.js",
-    "static/js/2.c4fb6ec2.chunk.js",
-    "static/css/main.dff9e30d.chunk.css",
-    "static/js/main.2cf6deaa.chunk.js"
+    "static/js/2.19d1509f.chunk.js",
+    "static/css/main.b600557e.chunk.css",
+    "static/js/main.d39fdd89.chunk.js"
   ]
 }
