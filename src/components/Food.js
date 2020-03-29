@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 
+import swal from 'sweetalert';
+
 import BeerTab from "../assets/beerTab.png";
 import BeerBarrel from "../assets/beerBarrel.png";
-import Plus from "../assets/plus.png";
 
 class Food extends Component {
     constructor(props) {
@@ -16,6 +17,25 @@ class Food extends Component {
         this.setState({
             userFood: e.target.value.toLowerCase()
         });
+    }
+
+    //Show beer info on hover & button click
+    displayInfo = () => {
+        if(this.props.foodName !== undefined && this.props.foodTagline !== undefined && this.props.foodBrewersTips !== undefined) {
+            swal({
+                title: this.props.foodName,
+                text: `${this.props.foodTagline} (Brewer's tips: ${this.props.foodBrewersTips})`,
+                dangerMode: true,
+                button: "Cool!"
+            })
+        } else {
+            swal({
+                title: 'Oops,',
+                text: 'please search a beer.',
+                dangerMode: true,
+                button: "Oh, right!"
+            })
+        }
     }
 
     render() {
@@ -36,7 +56,8 @@ class Food extends Component {
                     <div className="barrelContainer">
                         <img className="beerBarrel beerBarrelFood" src={ this.props.foodImgToDisplay ? this.props.foodImgToDisplay : BeerBarrel } alt="Beer barrel" />
                         <div className="overlay">
-                            <button className="plus" onClick={ (e) => this.props.addingToSelection(this.state.userFood) }><img src={Plus} alt="Click to add to selection" /></button>
+                            <button className="info" onClick={this.displayInfo}>Info</button>
+                            <button className="plus" onClick={ (e) => this.props.addingToSelection(this.state.userFood) }>+</button>
                         </div>
                     </div>
                 </div>

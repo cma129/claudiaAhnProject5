@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 
+import swal from 'sweetalert';
+
 import BeerTab from "../assets/beerTab.png";
 import BeerBarrel from "../assets/beerBarrel.png";
-import Plus from "../assets/plus.png";
 
 class Flavour extends Component {
     constructor(props) {
@@ -16,6 +17,25 @@ class Flavour extends Component {
         this.setState({
             userFlavour: e.target.value
         });
+    }
+
+    //Show beer info on hover & button click
+    displayInfo = () => {
+        if(this.props.flavourName !== '' && this.props.flavourTagline !== '' && this.props.flavourBrewersTips !== '') {
+            swal({
+                title: this.props.flavourName,
+                text: `${this.props.flavourTagline} (Brewer's tips: ${this.props.flavourBrewersTips})`,
+                dangerMode: true,
+                button: "Cool!"
+            })
+        } else {
+            swal({
+                title: 'Oops,',
+                text: 'please search a beer.',
+                dangerMode: true,
+                button: "Oh, right!"
+            })
+        }
     }
 
     render() {
@@ -40,8 +60,11 @@ class Flavour extends Component {
                         <h2>pick for you</h2>
                         <div className="barrelContainer">
                             <img className="beerBarrel beerBarrelFlavour" src={ this.props.flavourImgToDisplay ? this.props.flavourImgToDisplay : BeerBarrel } alt="Beer barrel" />
+                            <p>{this.props.oneFlavourName}</p>
+
                             <div className="overlay">
-                                <button className="plus" onClick={ (e) => this.props.addingToSelection(this.state.userFlavour) }><img src={Plus} alt="Click to add to selection" /></button>
+                                <button className="info" onClick={this.displayInfo}>Info</button>
+                                <button className="plus" onClick={ (e) => this.props.addingToSelection(this.state.userFlavour) }>+</button>
                             </div>
                         </div>
                     </div>

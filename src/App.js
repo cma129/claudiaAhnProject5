@@ -1,7 +1,3 @@
-// Planning to display custom error messages when options don't exist.
-// Planning to create a function to let user to click on beer when they want to add to their selection rather than having it added automatically
-// Planning to display more info on beer on click
-
 import React, { Component } from 'react';
 import './index.css';
 
@@ -23,6 +19,9 @@ class App extends Component {
       userFlavourSelection: "",
       userFoodSelection: "",
       oneFlavourImg: "",
+      oneFlavourName: "",
+      oneFlavourTagline: "",
+      oneFlavourBrewersTips: "",
       oneFoodImg: "",
     }
   }
@@ -67,10 +66,16 @@ class App extends Component {
       const num = Math.floor( Math.random() * (randomFlavours.length));
       const oneFlavour = randomFlavours[ num ];
       const oneFlavourImg = oneFlavour.image_url;
+      const oneFlavourName = oneFlavour.name;
+      const oneFlavourTagline = oneFlavour.tagline;
+      const oneFlavourBrewersTips = oneFlavour.brewers_tips;
       this.setState({
-        oneFlavourImg
+        oneFlavourImg: oneFlavourImg,
+        oneFlavourName: oneFlavourName,
+        oneFlavourTagline: oneFlavourTagline,
+        oneFlavourBrewersTips: oneFlavourBrewersTips
       })
-      return oneFlavourImg;
+      return oneFlavourImg
     }
     this.setState({
       flavourImg: chooseRandomFlavour(randomFlavours),
@@ -97,10 +102,16 @@ class App extends Component {
         const num = Math.floor( Math.random() * (randomFoods.length));
         const oneFood = randomFoods[ num ];
         const oneFoodImg = oneFood.image_url;
+        const oneFoodName = oneFood.name;
+        const oneFoodTagline = oneFood.tagline;
+        const oneFoodBrewersTips = oneFood.brewers_tips;
         this.setState({
-                oneFoodImg
+                oneFoodImg: oneFoodImg,
+                oneFoodName: oneFoodName,
+                oneFoodTagline: oneFoodTagline,
+                oneFoodBrewersTips: oneFoodBrewersTips
               })
-              return oneFoodImg;
+              return oneFoodImg
             }
             this.setState({
               foodImg: chooseRandomFood(randomFoods),
@@ -109,16 +120,12 @@ class App extends Component {
       } else {
           const foodErrorMessage = "There's no beer that matches this food pairing 😯";
           swal({
-            title: "Sorry",
+            title: 'Sorry',
             text: foodErrorMessage,
             dangerMode: true,
           });
       }
   }
-
-  // Beer info on hover (sweet alert)
-  // beer.name, beer.tagLine
-
 
   // PLANNING TO MAKE A FUNCTION HERE FOR SELECTION
   //Add to selection on click
@@ -139,10 +146,10 @@ class App extends Component {
         <main className="wrapper">
           <div className="picks" id="picks"></div>
           <div className="flavourFoodContainer">
-            <Flavour flavourGettingFunction={this.whichFlavour} flavourImgToDisplay={this.state.flavourImg}/>
-            <Food foodGettingFunction={this.whichFood} foodImgToDisplay={this.state.foodImg}/>
+            <Flavour flavourGettingFunction={this.whichFlavour} flavourImgToDisplay={this.state.flavourImg} flavourName={this.state.oneFlavourName} flavourTagline={this.state.oneFlavourTagline} flavourBrewersTips={this.state.oneFlavourBrewersTips} />
+            <Food foodGettingFunction={this.whichFood} foodImgToDisplay={this.state.foodImg} foodName={this.state.oneFoodName} foodTagline={this.state.oneFoodTagline} foodBrewersTips={this.state.oneFoodBrewersTips} />
           </div>
-          <Selection oneFlavourImg={this.state.oneFlavourImg} oneFoodImg={this.state.oneFoodImg}/>
+          <Selection oneFlavourImg={this.state.oneFlavourImg} oneFoodImg={this.state.oneFoodImg} flavourName={this.state.oneFlavourName} flavourTagline={this.state.oneFlavourTagline} flavourBrewersTips={this.state.oneFlavourBrewersTips} foodName={this.state.oneFoodName} foodTagline={this.state.oneFoodTagline} foodBrewersTips={this.state.oneFoodBrewersTips} />
         </main>
         <Footer />
       </div>
