@@ -635,7 +635,7 @@ footer p {
     width: 42px;  
     height: 42px;
     margin-left: 15px;
-    margin-top: 20px;
+    margin-top: 30px;
   }
 
   .beerBarrelFlavour,
@@ -706,6 +706,10 @@ footer p {
     height: auto;
   }
 
+  .logo {
+    margin-top: 30px;
+  }
+  
   h3 {
     margin-top: 5%;
   }
