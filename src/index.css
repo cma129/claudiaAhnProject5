@@ -14,7 +14,7 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 
 /* General styles */
 *:focus-within {
-  outline-color: #231f20;
+  outline: none;
 }
 
 .App {
@@ -81,8 +81,14 @@ input {
 }
 
 .caLogo:hover,
+.caLogo:focus,
+.caLogo:active,
 .caLogo:focus-within {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.caLogo:focus-within {
+  transform: rotateY(180deg);
 }
 
 .intro {
@@ -101,7 +107,7 @@ h1 {
 
 .myBeer {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .space {
@@ -112,6 +118,7 @@ h1 {
   width: 100px;  
   height: 100px;
   margin-left: 30px;
+  margin-top: 1.85%;
 }
 
 h3 {
@@ -700,11 +707,11 @@ footer p {
   }
 
   h3 {
-    margin-top: 0;
+    margin-top: 5%;
   }
 
   .buttonContainer {
-    margin-top: -5%;
+    margin-top: -4%;
   }
 
   .bottomHeader {

@@ -10,7 +10,7 @@ class Header extends Component {
         return(
             <header className="Header wrapper">
                 <section className="topHeader">
-                    <a href="http://claudiaahn.com" target="_blank" rel="noopener noreferrer"><img className="caLogo" src={CaLogo} alt="claudiaahn.com" /></a>
+                    <a href="http://claudiaahn.com" className="caLogo" target="_blank" rel="noopener noreferrer"><img src={CaLogo} alt="claudiaahn.com" /></a>
                     <div className="top">
                         <div className="intro">
                             <h1>
