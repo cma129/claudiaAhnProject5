@@ -102,12 +102,12 @@ h1 {
   font-size: 140px;
   text-transform: uppercase;
   width: 67%;
-  line-height: 1em;
+  line-height: 0.9em;
 }
 
 .myBeer {
   display: flex;
-  /* align-items: center; */
+  align-items: center;
 }
 
 .space {
@@ -118,7 +118,6 @@ h1 {
   width: 100px;  
   height: 100px;
   margin-left: 30px;
-  margin-top: 1.85%;
 }
 
 h3 {
@@ -625,8 +624,20 @@ footer p {
 /* Mobile */
 @media(max-width: 430px) {
   h1 {
-    line-height: 2em;
+    font-size: 60px;
   }
+
+  .space {
+    width: 17px;
+  }
+  
+  .logo {
+    width: 42px;  
+    height: 42px;
+    margin-left: 15px;
+    margin-top: 10px;
+  }
+
   .beerBarrelFlavour,
   .beerBarrelFood {
     width: 26%;
@@ -646,20 +657,6 @@ footer p {
 }
 
 @media(max-width: 380px) {
-  h1 {
-    font-size: 60px;
-  }
-
-  .space {
-    width: 17px;
-  }
-  
-  .logo {
-    width: 42px;  
-    height: 42px;
-    margin-left: 15px;
-  }
-
   .bottomHeader ol {
     font-size: 17px;
   }
