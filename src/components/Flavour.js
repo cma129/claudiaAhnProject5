@@ -63,8 +63,8 @@ class Flavour extends Component {
                             <p>{this.props.oneFlavourName}</p>
 
                             <div className="overlay">
-                                <button className="info" onClick={this.displayInfo}>Info</button>
-                                <button className="plus" onClick={ (e) => this.props.addingToSelection(this.state.userFlavour) }>+</button>
+                                <button className="info" onClick={ this.displayInfo }>Info</button>
+                                <button className="plus" onClick={ this.props.addingFlavourToSelection }>+</button>
                             </div>
                         </div>
                     </div>

@@ -23,6 +23,7 @@ class App extends Component {
       oneFlavourTagline: "",
       oneFlavourBrewersTips: "",
       oneFoodImg: "",
+      myBeerSelection: [],
     }
   }
 
@@ -83,7 +84,7 @@ class App extends Component {
   }
 
   // Use food user selection to filter through allBeers array, and save to state.
-  findFood = (userFood) => {
+  findFood = () => {
     const randomFoods = []
     const copyOfAllBeers = [...this.state.allBeers];
     copyOfAllBeers.forEach(beer => {
@@ -127,16 +128,21 @@ class App extends Component {
       }
   }
 
-  // PLANNING TO MAKE A FUNCTION HERE FOR SELECTION
-  //Add to selection on click
-  // const myBeerSelection = [];
-  // if (myBeerSelection.length < 3) {
-  //   myBeerSelection.unshift(this)
-  // } else {
-  //   const selectionErrorMessage = "Sorry, you already have 3 picks in your selection. Please remove some and try adding again."
-  //   console.log(selectionErrorMessage);
-  // }
-  //Remove from selection on click
+  //Add flavour image to my beer selection
+  addingFlavourToSelection = (myBeerSelection) => {
+    if (myBeerSelection.length > 3) {
+      const addingError = "Sorry, you already have 3 beers in your selection. Please remove some and try adding again."
+      alert(addingError)
+    } else {
+      myBeerSelection.push(this.state.oneFlavourImg)
+      return myBeerSelection
+    } 
+    this.setState({
+      newMyBeerSelection: myBeerSelection
+    })
+  }
+
+  //Remove from selection on '-' click
   //myBeerSelection.REMOVE(this)
   
   render () {
@@ -147,9 +153,9 @@ class App extends Component {
           <div className="picks" id="picks"></div>
           <div className="flavourFoodContainer">
             <Flavour flavourGettingFunction={this.whichFlavour} flavourImgToDisplay={this.state.flavourImg} flavourName={this.state.oneFlavourName} flavourTagline={this.state.oneFlavourTagline} flavourBrewersTips={this.state.oneFlavourBrewersTips} />
-            <Food foodGettingFunction={this.whichFood} foodImgToDisplay={this.state.foodImg} foodName={this.state.oneFoodName} foodTagline={this.state.oneFoodTagline} foodBrewersTips={this.state.oneFoodBrewersTips} />
+            <Food foodGettingFunction={this.whichFood} foodImgToDisplay={this.state.foodImg} foodName={this.state.oneFoodName} foodTagline={this.state.oneFoodTagline} foodBrewersTips={this.state.oneFoodBrewersTips}/>
           </div>
-          <Selection oneFlavourImg={this.state.oneFlavourImg} oneFoodImg={this.state.oneFoodImg} flavourName={this.state.oneFlavourName} flavourTagline={this.state.oneFlavourTagline} flavourBrewersTips={this.state.oneFlavourBrewersTips} foodName={this.state.oneFoodName} foodTagline={this.state.oneFoodTagline} foodBrewersTips={this.state.oneFoodBrewersTips} />
+          <Selection oneFlavourImg={this.state.oneFlavourImg} oneFoodImg={this.state.oneFoodImg} flavourName={this.state.oneFlavourName} flavourTagline={this.state.oneFlavourTagline} flavourBrewersTips={this.state.oneFlavourBrewersTips} foodName={this.state.oneFoodName} foodTagline={this.state.oneFoodTagline} foodBrewersTips={this.state.oneFoodBrewersTips} myBeerSelection={this.state.myBeerSelection} />
         </main>
         <Footer />
       </div>

@@ -8,7 +8,7 @@ class Selection extends Component {
     constructor() {
         super();
         this.state = {
-            oneFoodImg: ''
+
         }
     }
 
@@ -37,13 +37,14 @@ class Selection extends Component {
         }
     }
 
+
     render() {
         return(
             <section className="Selection" id="selection">
                 <h2>My Beer Selection</h2>
                 <section>
                     <div className="barrelContainer">
-                        <img className="beerBarrel beerBarrelSelection" src={ this.props.oneFlavourImg ? this.props.oneFlavourImg: BeerBarrel3 } alt="Beer barrel" />
+                        <img className="beerBarrel beerBarrelSelection" src={ this.props.myBeerSelection[0] ? this.props.oneFlavourImg: BeerBarrel3 } alt="Beer barrel" />
                         <div className="overlay">
                                 <button className="info" onClick={this.displayInfo}>Info</button>
                         </div>
