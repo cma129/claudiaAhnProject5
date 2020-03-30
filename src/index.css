@@ -309,7 +309,7 @@ main .beerTab {
   transition: color 0.3s linear;
 }
 
-.plus {
+.plusMinus {
   font-size: 70px;
   line-height: 1em;
   font-weight: normal;
@@ -320,8 +320,8 @@ main .beerTab {
 
 .info:hover,
 .info:focus-within,
-.plus:hover,
-.plus:focus-within {
+.plusMinus:hover,
+.plusMinus:focus-within {
   color: #e0e0e2;
 }
 
@@ -402,7 +402,11 @@ main .beerTab {
 }
 
 .Selection section {
-  display: flex;
+  display: flex; 
+}
+
+.Selection section:first-of-type {
+  margin-bottom: 25px;
 }
 
 .Selection .barrelContainer {

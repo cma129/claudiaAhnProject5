@@ -54,10 +54,10 @@ class Food extends Component {
                 <div>
                     <h2>pick for you</h2>
                     <div className="barrelContainer">
-                        <img className="beerBarrel beerBarrelFood" src={ this.props.foodImgToDisplay ? this.props.foodImgToDisplay : BeerBarrel } alt="Beer barrel" />
+                        <img className="beerBarrel beerBarrelFood" src={ this.props.foodImgToDisplay ? this.props.foodImgToDisplay : BeerBarrel } alt="Beer" />
                         <div className="overlay">
                             <button className="info" onClick={this.displayInfo}>Info</button>
-                            <button className="plus" onClick={ (e) => this.props.addingToSelection(this.state.userFood) }>+</button>
+                            <button className="plusMinus" onClick={ this.props.addingFoodToSelection }>+</button>
                         </div>
                     </div>
                 </div>

@@ -59,12 +59,11 @@ class Flavour extends Component {
                     <div>
                         <h2>pick for you</h2>
                         <div className="barrelContainer">
-                            <img className="beerBarrel beerBarrelFlavour" src={ this.props.flavourImgToDisplay ? this.props.flavourImgToDisplay : BeerBarrel } alt="Beer barrel" />
+                            <img className="beerBarrel beerBarrelFlavour" src={ this.props.flavourImgToDisplay ? this.props.flavourImgToDisplay : BeerBarrel } alt="Beer" />
                             <p>{this.props.oneFlavourName}</p>
-
                             <div className="overlay">
                                 <button className="info" onClick={ this.displayInfo }>Info</button>
-                                <button className="plus" onClick={ this.props.addingFlavourToSelection }>+</button>
+                                <button className="plusMinus" onClick={ this.props.addingFlavourToSelection }>+</button>
                             </div>
                         </div>
                     </div>
