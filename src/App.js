@@ -189,8 +189,17 @@ class App extends Component {
       })
     }
   }
+
+      //Remove beer from selection on '-' click
+      removing = (index) => {
+        this.state.myBeerSelection.splice(index, 1)
+        this.setState ({
+          myBeerSelection: this.state.myBeerSelection
+        })
+    }
   
   render () {
+    console.log(this.state.myBeerSelection)
     return (
       <div className="App">
         <Header />
@@ -200,7 +209,7 @@ class App extends Component {
             <Flavour flavourGettingFunction={this.whichFlavour} flavourImgToDisplay={this.state.flavourImg} flavourName={this.state.oneFlavourName} flavourTagline={this.state.oneFlavourTagline} flavourBrewersTips={this.state.oneFlavourBrewersTips}  addingFlavourToSelection={this.addingFlavourToSelection} />
             <Food foodGettingFunction={this.whichFood} foodImgToDisplay={this.state.foodImg} foodName={this.state.oneFoodName} foodTagline={this.state.oneFoodTagline} foodBrewersTips={this.state.oneFoodBrewersTips} addingFoodToSelection={this.addingFoodToSelection}/>
           </div>
-          <Selection oneFlavourImg={this.state.oneFlavourImg} oneFoodImg={this.state.oneFoodImg} flavourName={this.state.oneFlavourName} flavourTagline={this.state.oneFlavourTagline} flavourBrewersTips={this.state.oneFlavourBrewersTips} foodName={this.state.oneFoodName} foodTagline={this.state.oneFoodTagline} foodBrewersTips={this.state.oneFoodBrewersTips} myBeerSelection={this.state.myBeerSelection} />
+          <Selection oneFlavourImg={this.state.oneFlavourImg} oneFoodImg={this.state.oneFoodImg} flavourName={this.state.oneFlavourName} flavourTagline={this.state.oneFlavourTagline} flavourBrewersTips={this.state.oneFlavourBrewersTips} foodName={this.state.oneFoodName} foodTagline={this.state.oneFoodTagline} foodBrewersTips={this.state.oneFoodBrewersTips} myBeerSelection={this.state.myBeerSelection} removing={this.removing} />
         </main>
         <Footer />
       </div>

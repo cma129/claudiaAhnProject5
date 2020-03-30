@@ -37,16 +37,9 @@ class Selection extends Component {
         }
     }
         
-    //Remove beer from selection on '-' click
-    removing = (beerSelection) => {
-        this.props.myBeerSelection.pop(this.props.myBeerSelection[0])
-        if (this.props.myBeerSelection[0] !== '' || undefined) {
-        this.props.myBeerSelection.pop(this.props.myBeerSelection[0])
-        }
-    }
 
+    
     render() {
-        console.log(this.props.myBeerSelection)
         return(
             <section className="Selection" id="selection">
                 <h2>My Beer Selection</h2>
@@ -55,44 +48,44 @@ class Selection extends Component {
                         <img className="beerBarrel beerBarrelSelection" src={ this.props.myBeerSelection[0] ? this.props.myBeerSelection[0]: BeerBarrel3 } alt="Beer" />
                         <div className="overlay">
                             <button className="info" onClick={this.displayInfo}>Info</button>
-                            <button className="plusMinus" onClick={ this.props.removing }>-</button>
+                            <button className="plusMinus" onClick={ () => {this.props.removing(0)} }>-</button>
                         </div>
                     </div>
                     <div className="barrelContainer">
                         <img className="beerBarrel beerBarrelSelection" src={ this.props.myBeerSelection[1] ? this.props.myBeerSelection[1]: BeerBarrel3 } alt="Beer" />
                         <div className="overlay">
                             <button className="info" onClick={this.displayInfo}>Info</button>
-                            <button className="plusMinus" onClick={ this.props.removing }>-</button>
+                            <button className="plusMinus" onClick={ () => {this.props.removing(1) } }>-</button>
                         </div>
                     </div>
                     <div className="barrelContainer">
                         <img className="beerBarrel beerBarrelSelection" src={ this.props.myBeerSelection[2] ? this.props.myBeerSelection[2]: BeerBarrel3 } alt="Beer" />
                         <div className="overlay">
                             <button className="info" onClick={this.displayInfo}>Info</button>
-                            <button className="plusMinus" onClick={ this.props.removing }>-</button>
+                            <button className="plusMinus" onClick={ () => {this.props.removing(2) } }>-</button>
                         </div>
                     </div>
                 </section>
                 <section>
                     <div className="barrelContainer">
-                        <img className="beerBarrel beerBarrelSelection" src={ this.props.myBeerSelection[3] ? this.props.myBeerSelection[0]: BeerBarrel3 } alt="Beer" />
+                        <img className="beerBarrel beerBarrelSelection" src={ this.props.myBeerSelection[3] ? this.props.myBeerSelection[3]: BeerBarrel3 } alt="Beer" />
                         <div className="overlay">
                         <button className="info" onClick={this.displayInfo}>Info</button>
-                        <button className="plusMinus" onClick={ this.props.removing }>-</button>
+                        <button className="plusMinus" onClick={ () => {this.props.removing(3) } }>-</button>
                         </div>
                     </div>
                     <div className="barrelContainer">
-                        <img className="beerBarrel beerBarrelSelection" src={ this.props.myBeerSelection[4] ? this.props.myBeerSelection[1]: BeerBarrel3 } alt="Beer" />
+                        <img className="beerBarrel beerBarrelSelection" src={ this.props.myBeerSelection[4] ? this.props.myBeerSelection[4]: BeerBarrel3 } alt="Beer" />
                         <div className="overlay">
                             <button className="info" onClick={this.displayInfo}>Info</button>
-                            <button className="plusMinus" onClick={ this.props.removing }>-</button>
+                            <button className="plusMinus" onClick={ () => {this.props.removing(4) } }>-</button>
                         </div>
                     </div>
                     <div className="barrelContainer">
-                        <img className="beerBarrel beerBarrelSelection" src={ this.props.myBeerSelection[5] ? this.props.myBeerSelection[2]: BeerBarrel3 } alt="Beer" />
+                        <img className="beerBarrel beerBarrelSelection" src={ this.props.myBeerSelection[5] ? this.props.myBeerSelection[5]: BeerBarrel3 } alt="Beer" />
                         <div className="overlay">
                             <button className="info" onClick={this.displayInfo}>Info</button>
-                            <button className="plusMinus" onClick={ this.props.removing }>-</button>
+                            <button className="plusMinus" onClick={ () => {this.props.removing(5) } }>-</button>
                         </div>
                     </div>
                 </section>
