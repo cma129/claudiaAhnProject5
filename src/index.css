@@ -282,13 +282,14 @@ main .beerTab {
 .barrelContainer:focus-within .overlay {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   background-color: #cca300a6;
   position: absolute;
   width: 18%;
   height: 100%;
   top: 0; left: 41%;
+  padding-bottom: 3px;
 }
 
 .barrelContainer:hover .beerBarrelFlavour,
@@ -409,6 +410,7 @@ main .beerTab {
 .Selection .barrelContainer:focus-within .selectionOverlay {
   width: 50%;
   left: 25%;
+  padding-bottom: 0;
 }
 
 /* Footer styles */
