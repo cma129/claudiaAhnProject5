@@ -23,7 +23,12 @@ class App extends Component {
       oneFlavourTagline: "",
       oneFlavourBrewersTips: "",
       oneFoodImg: "",
+      oneFoodName: "",
+      oneFoodTagline: "",
+      oneFoodBrewersTips: "",
       myBeerSelection: [],
+      oneFlavourInfo: {},
+      oneFoodInfo: {},
     }
   }
 
@@ -131,6 +136,12 @@ class App extends Component {
   //Add flavour image to my beer selection
   addingFlavourToSelection = (beerSelection) => {
     const selection = [...this.state.myBeerSelection]
+    const oneFlavourInfo = {
+      oneImg: this.state.oneFlavourImg,
+      oneName: this.state.oneFlavourName,
+      oneTagline: this.state.oneFlavourTagline,
+      oneBrewersTips: this.state.oneFlavourBrewersTips
+    }
     if (selection.length > 6) {
       const addingError = "You've already got 6 beers in your selection. Please remove some and try adding again.";
       swal({
@@ -145,16 +156,17 @@ class App extends Component {
         dangerMode: true,
         button: "Oh, right!"
       })
-    } else if (selection.includes(this.state.oneFlavourImg)) {  
+    } else if (selection.includes(oneFlavourInfo.oneName)) {  
       swal({
         title: 'Oh,',
         text: "looks like you've already got this beer in your selection.",
         dangerMode: true,
       })
     } else {
-      selection.push(this.state.oneFlavourImg) 
+      selection.push(oneFlavourInfo)
       this.setState({
-        myBeerSelection: selection
+        oneFlavourInfo: oneFlavourInfo,
+        myBeerSelection: selection,
       })
     }
   }
@@ -176,30 +188,47 @@ class App extends Component {
         dangerMode: true,
         button: "Oh, right!"
       })
-    } else if (selection.includes(this.state.oneFoodImg)) {  
+    } else if (selection.includes(this.state.oneFoodName)) {  
       swal({
         title: 'Oh,',
         text: "looks like you've already got this beer in your selection.",
         dangerMode: true,
       })
     } else {
-      selection.push(this.state.oneFoodImg) 
+      console.log(selection.includes('Buzz'))
+      const oneFoodInfo = {
+        oneImg: this.state.oneFoodImg,
+        oneName: this.state.oneFoodName,
+        oneTagline: this.state.oneFoodTagline,
+        oneBrewersTips: this.state.oneFoodBrewersTips
+      }
+      selection.push(oneFoodInfo)
       this.setState({
-        myBeerSelection: selection
+        oneFoodInfo: oneFoodInfo,
+        myBeerSelection: selection,
       })
     }
   }
 
-      //Remove beer from selection on '-' click
-      removing = (index) => {
+  //Remove beer from selection on '-' click
+  removing = (index) => {
+    swal({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      dangerMode: true,
+      buttons: ["Never mind", "Delete"]     
+    })
+    .then((willDelete) => {
+      if (willDelete) {
         this.state.myBeerSelection.splice(index, 1)
         this.setState ({
           myBeerSelection: this.state.myBeerSelection
         })
-    }
-  
+      }
+    })
+  }
+
   render () {
-    console.log(this.state.myBeerSelection)
     return (
       <div className="App">
         <Header />
@@ -209,7 +238,7 @@ class App extends Component {
             <Flavour flavourGettingFunction={this.whichFlavour} flavourImgToDisplay={this.state.flavourImg} flavourName={this.state.oneFlavourName} flavourTagline={this.state.oneFlavourTagline} flavourBrewersTips={this.state.oneFlavourBrewersTips}  addingFlavourToSelection={this.addingFlavourToSelection} />
             <Food foodGettingFunction={this.whichFood} foodImgToDisplay={this.state.foodImg} foodName={this.state.oneFoodName} foodTagline={this.state.oneFoodTagline} foodBrewersTips={this.state.oneFoodBrewersTips} addingFoodToSelection={this.addingFoodToSelection}/>
           </div>
-          <Selection oneFlavourImg={this.state.oneFlavourImg} oneFoodImg={this.state.oneFoodImg} flavourName={this.state.oneFlavourName} flavourTagline={this.state.oneFlavourTagline} flavourBrewersTips={this.state.oneFlavourBrewersTips} foodName={this.state.oneFoodName} foodTagline={this.state.oneFoodTagline} foodBrewersTips={this.state.oneFoodBrewersTips} myBeerSelection={this.state.myBeerSelection} removing={this.removing} />
+          <Selection oneFlavourInfo={this.state.oneFlavourInfo} oneFoodInfo={this.state.oneFoodInfo} myBeerSelection={this.state.myBeerSelection} removing={this.removing} />
         </main>
         <Footer />
       </div>
