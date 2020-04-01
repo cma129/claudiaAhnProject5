@@ -22,10 +22,9 @@ class Header extends Component {
                             <h3>Use this app to create your own beer selection based on your personal taste!</h3>                    
                         </div>
                         <div className="buttonContainer">
-                            <a href="#instructions" className="button startGot"
-                                >
-                                    <img className="beerBarrel2" src={BeerBarrel2} alt="Beer barrel" />Get Started
-                                </a>  
+                            <a href="#instructions" className="button startGot">
+                                <img className="beerBarrel2" src={BeerBarrel2} alt="Beer barrel" />Get Started
+                            </a>  
                         </div>
                     </div>
                 </section>
@@ -39,14 +38,11 @@ class Header extends Component {
                         <li><p>Check out the info, and if you like the beer picked for you, click the '+' button on the beer to add it to your selection. Click '-' button to remove.</p></li>
                     </ol>
                     <div className="buttonContainer">
-                        <a href="#picks" className="button startGot"
-                                    >
-                                        <img className="beerTab" src={BeerTab} alt="Beer tab" />Got it
-                                    </a>  
+                        <a href="#picks" className="button startGot">
+                            <img className="beerTab" src={BeerTab} alt="Beer tab" />Got it
+                        </a>  
                     </div>
                 </section>
-
-
             </header>
         );
     }

@@ -5,12 +5,7 @@ import swal from 'sweetalert';
 import BeerBarrel3 from "../assets/beerBarrel3.png";
 
 class Selection extends Component {
-    constructor() {
-        super();
-        this.state = {
 
-        }
-    }
     // Show beer info on 'info' button click
     displayInfo = (i) => {
         if(this.props.myBeerSelection[i] !== undefined) {
