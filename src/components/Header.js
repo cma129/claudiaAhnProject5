@@ -31,12 +31,12 @@ class Header extends Component {
                 </section>
                 <section className="bottomHeader" id="instructions">
                     <ol>
-                        <li>Below, there are TWO separate sections where you where can get a beer recommended. You can use just one or both.</li>
+                        <li><p>Below, there are TWO separate sections where you where can get a beer recommended. You can use just one or both.</p></li>
                         <li>
                             <p>If you know what kind of flavour you want, choose one flavour from the options and hit 'show me a beer' button.</p>
                             <p>OR, if you have a food pairing in mind, type that food in and hit 'show me a beer' button.</p>
                         </li>
-                        <li>If you really like the beer we picked for you, click the '+' button on the beer to add it to your selection.</li>
+                        <li><p>Check out the info, and if you like the beer picked for you, click the '+' button on the beer to add it to your selection. Click '-' button to remove.</p></li>
                     </ol>
                     <div className="buttonContainer">
                         <a href="#picks" className="button startGot"

@@ -404,6 +404,8 @@ main .beerTab {
 .beerBarrelSelection {
   width: 50%;
   margin: 0 auto;
+  -webkit-filter: drop-shadow(6px 6px 5px #231f20b6);
+  filter: drop-shadow(6px 6px 5px #231f20b6);
 }
 
 .Selection .barrelContainer:hover .selectionOverlay,
@@ -411,6 +413,16 @@ main .beerTab {
   width: 50%;
   left: 25%;
   padding-bottom: 0;
+}
+
+.Selection .info {
+  line-height: 0.3em;
+  height: 10px;
+}
+
+.Selection .plusMinus {
+  line-height: 0.5em;
+  height: 10px;
 }
 
 /* Footer styles */
@@ -639,6 +651,10 @@ footer p {
     font-size: 18px;
   }
 
+  .bottomHeader li {
+    margin-bottom: 1.3em;
+  }
+
   label {
     font-size: 35px;
     margin-bottom: 10px;
@@ -664,6 +680,14 @@ footer p {
     left: 41%;
   }
 
+  .info {
+    font-size: 17.5px;
+  }
+
+  .plusMinus {
+    font-size: 50px;
+  }
+
   .Selection .barrelContainer {
     width: 33%;
     height: 300px;
@@ -677,6 +701,15 @@ footer p {
   .Selection .barrelContainer:focus-within .selectionOverlay {
     width: 45%;
     left: 27.5%;
+  }
+
+  .Selection .info {
+    height: 100px;
+    line-height: 1em;
+  }
+
+  .Selection .plusMinus {
+    height: 60px;
   }
 }
 
@@ -876,6 +909,16 @@ footer p {
     width: 70%;
     left: 15.1%;
   }
+
+  .Selection .info {
+    line-height: 5em;
+    height: 100px;
+  }
+  
+  .Selection .plusMinus {
+    line-height: 1em;
+    height: 100px;
+  }
 }
 
 @media(max-height: 350px) {
@@ -885,7 +928,7 @@ footer p {
   
   .Selection .barrelContainer {
     width: 33%;
-    height: 260px;
+    height: 275px;
   }
 
   .Selection .barrelContainer:hover .selectionOverlay,

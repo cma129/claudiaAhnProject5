@@ -210,11 +210,11 @@ class App extends Component {
   }
 
   //Remove beer from selection on '-' click
-  removing = (index) => {
-    if(this.state.oneFoodImg === '' || this.state.oneFlavourImg === '') {
+  removing = (i) => {
+    if(this.state.myBeerSelection[i] === undefined) {
       swal({
         title: 'Oops,',
-        text: 'please search a beer.',
+        text: 'no beer to delete here.',
         dangerMode: true,
         button: "Oh, right!"
       })
@@ -227,7 +227,7 @@ class App extends Component {
       })
       .then((willDelete) => {
         if (willDelete) {
-          this.state.myBeerSelection.splice(index, 1)
+          this.state.myBeerSelection.splice(i, 1)
           this.setState ({
             myBeerSelection: this.state.myBeerSelection
           })
