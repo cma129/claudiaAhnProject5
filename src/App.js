@@ -136,7 +136,7 @@ class App extends Component {
   //Add flavour image to my beer selection
   addingFlavourToSelection = (beerSelection) => {
     const selection = [...this.state.myBeerSelection]
-    if (selection.length > 6) {
+    if (selection.length > 5) {
       const addingError = "You've already got 6 beers in your selection. Please remove some and try adding again.";
       swal({
         title: 'Sorry',
@@ -174,7 +174,7 @@ class App extends Component {
   //Add food image to my beer selection
   addingFoodToSelection = (beerSelection) => {
     const selection = [...this.state.myBeerSelection]
-    if (selection.length > 6) {
+    if (selection.length > 5) {
       const addingError = "You've already got 6 beers in your selection. Please remove some and try adding again.";
       swal({
         title: 'Sorry',
