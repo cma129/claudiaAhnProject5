@@ -136,12 +136,6 @@ class App extends Component {
   //Add flavour image to my beer selection
   addingFlavourToSelection = (beerSelection) => {
     const selection = [...this.state.myBeerSelection]
-    const oneFlavourInfo = {
-      oneImg: this.state.oneFlavourImg,
-      oneName: this.state.oneFlavourName,
-      oneTagline: this.state.oneFlavourTagline,
-      oneBrewersTips: this.state.oneFlavourBrewersTips
-    }
     if (selection.length > 6) {
       const addingError = "You've already got 6 beers in your selection. Please remove some and try adding again.";
       swal({
@@ -156,13 +150,19 @@ class App extends Component {
         dangerMode: true,
         button: "Oh, right!"
       })
-    } else if (selection.includes(oneFlavourInfo.oneName)) {  
+    } else if (selection.some(e => e.oneName === this.state.oneFlavourName)) {  
       swal({
         title: 'Oh,',
         text: "looks like you've already got this beer in your selection.",
         dangerMode: true,
       })
     } else {
+      const oneFlavourInfo = {
+        oneImg: this.state.oneFlavourImg,
+        oneName: this.state.oneFlavourName,
+        oneTagline: this.state.oneFlavourTagline,
+        oneBrewersTips: this.state.oneFlavourBrewersTips
+      }
       selection.push(oneFlavourInfo)
       this.setState({
         oneFlavourInfo: oneFlavourInfo,
@@ -188,14 +188,13 @@ class App extends Component {
         dangerMode: true,
         button: "Oh, right!"
       })
-    } else if (selection.includes(this.state.oneFoodName)) {  
+    } else if (selection.some(e => e.oneName  === this.state.oneFoodName)) {  
       swal({
         title: 'Oh,',
         text: "looks like you've already got this beer in your selection.",
         dangerMode: true,
       })
     } else {
-      console.log(selection.includes('Buzz'))
       const oneFoodInfo = {
         oneImg: this.state.oneFoodImg,
         oneName: this.state.oneFoodName,
