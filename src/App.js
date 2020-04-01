@@ -211,20 +211,29 @@ class App extends Component {
 
   //Remove beer from selection on '-' click
   removing = (index) => {
-    swal({
-      title: 'Are you sure?',
-      text: "You won't be able to revert this!",
-      dangerMode: true,
-      buttons: ["Never mind", "Delete"]     
-    })
-    .then((willDelete) => {
-      if (willDelete) {
-        this.state.myBeerSelection.splice(index, 1)
-        this.setState ({
-          myBeerSelection: this.state.myBeerSelection
-        })
-      }
-    })
+    if(this.state.oneFoodImg === '' || this.state.oneFlavourImg === '') {
+      swal({
+        title: 'Oops,',
+        text: 'please search a beer.',
+        dangerMode: true,
+        button: "Oh, right!"
+      })
+    } else {
+      swal({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        dangerMode: true,
+        buttons: ["Never mind", "Delete"]     
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          this.state.myBeerSelection.splice(index, 1)
+          this.setState ({
+            myBeerSelection: this.state.myBeerSelection
+          })
+        }
+      })
+    }
   }
 
   render () {
