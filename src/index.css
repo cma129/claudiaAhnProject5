@@ -940,7 +940,8 @@ footer p {
 
 @supports (-webkit-touch-callout: none) {
   .logo {
-    margin-top: 5px;
+    margin-left: 13px;
+    margin-top: 3px;
   }
 
 .barrelContainer:hover .overlay
