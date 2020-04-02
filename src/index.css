@@ -940,7 +940,7 @@ footer p {
 
 @supports (-webkit-touch-callout: none) {
   .space {
-    width: 27px;
+    width: 35px;
   }
 
   .logo {
