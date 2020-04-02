@@ -939,8 +939,13 @@ footer p {
 }
 
 @supports (-webkit-touch-callout: none) {
+  .space {
+    width: 21px;
+  }
+
   .logo {
     margin-top: 4px;
+    margin-left: 14px;
   }
 
 .barrelContainer:hover .overlay
