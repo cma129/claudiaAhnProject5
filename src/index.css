@@ -111,14 +111,14 @@ h1 {
 }
 
 .space {
-  width: 40px;
+  width: 41px;
 }
 
 .logo {
   width: 100px;  
   height: 100px;
-  margin-left: 30px;
-  margin-top: 5px;
+  margin-left: 31px;
+  margin-top: 6px;
 }
 
 h3 {
@@ -465,13 +465,13 @@ footer p {
   }
 
   .space {
-    width: 30px;
+    width: 31px;
   }
   
   .logo {
     width: 70px;  
     height: 70px;
-    margin-left: 20px;
+    margin-left: 21px;
   }
   
   h3 {
@@ -631,7 +631,7 @@ footer p {
   }
 
   .space {
-    width: 20px;
+    width: 21px;
   }
   
   .logo {
@@ -720,13 +720,13 @@ footer p {
   }
 
   .space {
-    width: 17px;
+    width: 19px;
   }
   
   .logo {
     width: 42px;  
     height: 42px;
-    margin-left: 15px;
+    margin-left: 12px;
     margin-top: 27px;
   }
 
@@ -940,8 +940,7 @@ footer p {
 
 @supports (-webkit-touch-callout: none) {
   .logo {
-    margin-left: 13px;
-    margin-top: 3px;
+    margin-top: 4px;
   }
 
 .barrelContainer:hover .overlay
