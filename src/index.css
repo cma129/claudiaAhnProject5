@@ -940,17 +940,17 @@ footer p {
 
 @supports (-webkit-touch-callout: none) {
   .space {
-    margin-left: 18px;
+    margin-left: 21px;
   }
 
   .logo {
     margin-top: 4.5px;
-    margin-left: 17px;
+    margin-left: 15px;
   }
 
 .barrelContainer:hover .overlay
 .barrelContainer:focus-within .overlay {
   -webkit-filter: none;
   filter: none;
-}
+  }
 }
