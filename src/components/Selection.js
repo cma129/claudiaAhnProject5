@@ -8,14 +8,14 @@ class Selection extends Component {
 
     // Show beer info on 'info' button click
     displayInfo = (i) => {
-        if(this.props.myBeerSelection[i] !== undefined) {
+        if (this.props.myBeerSelection[i] !== undefined) {
             swal({
                 title: this.props.myBeerSelection[i].oneName,
                 text: `${this.props.myBeerSelection[i].oneTagline} (Brewer's tips: ${this.props.myBeerSelection[i].oneBrewersTips})`,
                 dangerMode: true,
                 button: "Cool!"
             })
-        } else if(this.props.myBeerSelection[i] === undefined) {
+        } else if (this.props.myBeerSelection[i] === undefined) {
             swal({
                 title: 'Oops,',
                 text: "You haven't selected a beer here yet.",

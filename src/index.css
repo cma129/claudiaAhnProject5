@@ -937,3 +937,15 @@ footer p {
     left: 32%;
   }
 }
+
+@supports (-webkit-touch-callout: none) {
+  .logo {
+    margin-top: 5px;
+  }
+
+.barrelContainer:hover .overlay
+.barrelContainer:focus-within .overlay {
+  -webkit-filter: none;
+  filter: none;
+}
+}
