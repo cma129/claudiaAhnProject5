@@ -163,10 +163,19 @@ class App extends Component {
         oneTagline: this.state.oneFlavourTagline,
         oneBrewersTips: this.state.oneFlavourBrewersTips
       }
-      selection.push(oneFlavourInfo)
-      this.setState({
-        oneFlavourInfo: oneFlavourInfo,
-        myBeerSelection: selection,
+      swal({
+        title: 'You want to add this one, right?',
+        dangerMode: true,
+        buttons: ["Nope", "Yeah"]     
+      })
+      .then((willAdd) => {
+        if (willAdd) {
+          selection.push(oneFlavourInfo)
+          this.setState({
+            oneFlavourInfo: oneFlavourInfo,
+            myBeerSelection: selection,
+          })
+        }
       })
     }
   }
@@ -201,10 +210,19 @@ class App extends Component {
         oneTagline: this.state.oneFoodTagline,
         oneBrewersTips: this.state.oneFoodBrewersTips
       }
-      selection.push(oneFoodInfo)
-      this.setState({
-        oneFoodInfo: oneFoodInfo,
-        myBeerSelection: selection,
+      swal({
+        title: 'You want to add this one, right?',
+        dangerMode: true,
+        buttons: ["Nope", "Yeah"]     
+      })
+      .then((willAdd) => {
+        if (willAdd) {
+          selection.push(oneFoodInfo)
+          this.setState({
+            oneFoodInfo: oneFoodInfo,
+            myBeerSelection: selection,
+          })
+        }
       })
     }
   }
