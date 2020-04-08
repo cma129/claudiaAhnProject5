@@ -166,10 +166,10 @@ class App extends Component {
       swal({
         title: 'You want to add this one, right?',
         dangerMode: true,
-        buttons: ["Nope", "Yeah"]     
+        buttons: ["Yeah", "Nope"]     
       })
       .then((willAdd) => {
-        if (willAdd) {
+        if (!willAdd) {
           selection.push(oneFlavourInfo)
           this.setState({
             oneFlavourInfo: oneFlavourInfo,
@@ -213,10 +213,10 @@ class App extends Component {
       swal({
         title: 'You want to add this one, right?',
         dangerMode: true,
-        buttons: ["Nope", "Yeah"]     
+        buttons: ["Yeah", "Nope"]     
       })
       .then((willAdd) => {
-        if (willAdd) {
+        if (!willAdd) {
           selection.push(oneFoodInfo)
           this.setState({
             oneFoodInfo: oneFoodInfo,

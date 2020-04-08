@@ -21,7 +21,7 @@ class Food extends Component {
 
     //Show beer info on hover & button click
     displayInfo = () => {
-        if(this.props.foodName !== undefined && this.props.foodTagline !== undefined && this.props.foodBrewersTips !== undefined) {
+        if(this.props.foodName !== '' && this.props.foodTagline !== '' && this.props.foodBrewersTips !== '') {
             swal({
                 title: this.props.foodName,
                 text: `${this.props.foodTagline} (Brewer's tips: ${this.props.foodBrewersTips})`,
