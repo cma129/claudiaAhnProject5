@@ -963,14 +963,14 @@ footer p {
 @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) { 
   .barrelContainer:hover .overlay,
   .barrelContainer:focus-within .overlay {
-    justify-content: space-around;
+    justify-content: center;
   }
 }
 
 @media not all and (min-resolution:.001dpcm) { 
   .barrelContainer:hover .overlay,
   .barrelContainer:focus-within .overlay {
-    justify-content: space-around;
+    justify-content: center;
   }
 }
 
@@ -988,7 +988,7 @@ footer p {
   .barrelContainer .overlay {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     background-color: #cca300a6;
     position: absolute;
