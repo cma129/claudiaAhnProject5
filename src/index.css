@@ -988,7 +988,7 @@ footer p {
   .barrelContainer .overlay {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     background-color: #cca300a6;
     position: absolute;
