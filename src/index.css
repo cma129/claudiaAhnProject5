@@ -940,10 +940,17 @@ footer p {
 }
 
 /* Safari */
-/* @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) { 
+@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) { 
   .barrelContainer:hover .overlay,
   .barrelContainer:focus-within .overlay {
     justify-content: center;
+  }
+
+  .beerBarrelFlavour,
+  .beerBarrelFood,
+  .beerBarrelSelection {
+    -webkit-filter: none;
+    filter: none;
   }
 }
 
@@ -952,7 +959,7 @@ footer p {
   .barrelContainer:focus-within .overlay {
     justify-content: center;
   }
-} */
+}
 
 /* Edge */
 @supports (-ms-ime-align:auto) {
