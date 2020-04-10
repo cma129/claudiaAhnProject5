@@ -938,6 +938,9 @@ footer p {
   }
 }
 
+/* Browser Compatibility */
+
+/* iOS */
 @supports (-webkit-touch-callout: none) {
   .space {
     margin-left: 21px;
@@ -955,3 +958,44 @@ footer p {
     filter: none;
   }
 }
+
+/* Safari */
+@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) { 
+  .barrelContainer:hover .overlay,
+  .barrelContainer:focus-within .overlay {
+    justify-content: space-around;
+  }
+}
+
+@media not all and (min-resolution:.001dpcm) { 
+  .barrelContainer:hover .overlay,
+  .barrelContainer:focus-within .overlay {
+    justify-content: space-around;
+  }
+}
+
+/* Edge */
+
+@supports (-ms-ime-align:auto) {
+    .Header .button {
+    justify-content: space-around;
+  }
+
+  .beerBarrel {
+    opacity: 0.5;
+  }
+
+  .barrelContainer .overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #cca300a6;
+    position: absolute;
+    width: 18%;
+    height: 100%;
+    top: 0; left: 41%;
+    padding-bottom: 3px;
+  }
+}
+
