@@ -416,13 +416,12 @@ main .beerTab {
 }
 
 .Selection .info {
-  line-height: 0.3em;
-  height: 10px;
+  padding-bottom: 1em;
 }
 
 .Selection .plusMinus {
+  height: 2em;
   line-height: 0.5em;
-  height: 10px;
 }
 
 /* Footer styles */
@@ -702,15 +701,6 @@ footer p {
     width: 45%;
     left: 27.5%;
   }
-
-  .Selection .info {
-    height: 100px;
-    line-height: 1em;
-  }
-
-  .Selection .plusMinus {
-    height: 60px;
-  }
 }
 
 /* Mobile */
@@ -909,16 +899,6 @@ footer p {
     width: 70%;
     left: 15.1%;
   }
-
-  .Selection .info {
-    line-height: 5em;
-    height: 100px;
-  }
-  
-  .Selection .plusMinus {
-    line-height: 1em;
-    height: 100px;
-  }
 }
 
 @media(max-height: 350px) {
@@ -960,7 +940,7 @@ footer p {
 }
 
 /* Safari */
-@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) { 
+/* @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) { 
   .barrelContainer:hover .overlay,
   .barrelContainer:focus-within .overlay {
     justify-content: center;
@@ -972,10 +952,9 @@ footer p {
   .barrelContainer:focus-within .overlay {
     justify-content: center;
   }
-}
+} */
 
 /* Edge */
-
 @supports (-ms-ime-align:auto) {
   .Header .button {
     justify-content: space-around;
