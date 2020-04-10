@@ -977,7 +977,7 @@ footer p {
 /* Edge */
 
 @supports (-ms-ime-align:auto) {
-    .Header .button {
+  .Header .button {
     justify-content: space-around;
   }
 
