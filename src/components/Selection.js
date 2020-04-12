@@ -18,7 +18,7 @@ class Selection extends Component {
         } else if (this.props.myBeerSelection[i] === undefined) {
             swal({
                 title: 'Oops,',
-                text: "You haven't added a beer here yet.",
+                text: "you haven't added a beer here yet.",
                 dangerMode: true,
                 button: "Oh, right!"
             })
