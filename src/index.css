@@ -752,6 +752,10 @@ footer p {
     font-size: 17px;
   }
 
+  .bottomHeader .buttonContainer {
+    margin-top: -7%;
+  }
+
   label {
     font-size: 30px;
   }
@@ -797,8 +801,17 @@ footer p {
 }
 
 @media(max-width: 330px) {
+  .bottomHeader ol {
+    font-size: 16px;
+    line-height: 1.2em;
+  }
+
+  .bottomHeader li {
+    margin-bottom: 0.5em;
+  }
+
   .bottomHeader .buttonContainer {
-    margin-top: -10%;
+    margin-top: -13%;
   }
 
     .Flavour {
