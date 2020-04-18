@@ -19,6 +19,5 @@ Some things I'd love to include to improve my app:
 - use of Firebase to store user's selection data
 - log-in option to store each user's selection data
 - finding another API that I can use to provide more beer options 
-- hyperlinks to The Beer Store or LCBO for users to purchase picked beers
-- button to add the beer to the selection on "info" modal
+- hyperlinks to The Beer Store or LCBO for users to purchase picked beers (The current API's beers are not sold on The Beer Store or LCBO.)
 - making "my beer selection" button into a floating element for users to be able to always see it on the screen
