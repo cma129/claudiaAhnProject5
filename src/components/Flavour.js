@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import swal from 'sweetalert';
-
 import BeerTab from "../assets/beerTab.png";
 import BeerBarrel from "../assets/beerBarrel.png";
 
@@ -41,9 +39,10 @@ class Flavour extends Component {
                         <h2>pick for you</h2>
                         <div className="barrelContainer">
                             <img className="beerBarrel beerBarrelFlavour" src={ this.props.flavourImgToDisplay ? this.props.flavourImgToDisplay : BeerBarrel } onClick={ this.props.displayFlavourInfo } alt="Beer" />
+                            <p className="click">🡸 Click on beer!</p>
                         </div>
                     </div>
-                    <a href="#selection" className="button check">Check my selection</a>
+                    <a href="#selection" className="button check">check my selection</a>
             </section>
         );
     }

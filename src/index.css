@@ -78,7 +78,7 @@ input {
   width: 37px;
   height: auto;
   position: absolute;
-  top: 10%;
+  top: 7%;
   transition: transform 0.7s ease-in-out;
 }
 
@@ -268,6 +268,18 @@ main .beerTab {
   filter: opacity(.7);
 }
 
+.click {
+  text-transform: uppercase;
+  position: absolute;
+  right: 15%;
+  top: 40%;
+  width: 80px;
+  text-align: center;
+  line-height: 1.1em;
+  font-size: 15px;
+  font-weight: normal;
+}
+
 .beerBarrelFlavour,
 .beerBarrelFood {
   width: 18%;
@@ -322,7 +334,7 @@ main .beerTab {
   position: fixed;
   text-align: center;
   right: 10%;
-  top: 1%; 
+  top: 7%; 
   width: 90px;
   height: auto;
   font-size: 15px;
@@ -362,13 +374,10 @@ main .beerTab {
   filter: drop-shadow(6px 6px 5px #231f20b6);
 }
 
-.Selection .info {
-  padding-bottom: 1em;
-}
-
-.Selection .plusMinus {
-  height: 2em;
-  line-height: 0.5em;
+.Selection .click {
+  position: initial;
+  width: auto;
+  margin-bottom: 10px;
 }
 
 /* Footer styles */
@@ -450,6 +459,7 @@ footer p {
   .check {
     text-align: center;
     width: 90px;
+    margin: 0;
   }
 
   .Header .button {
@@ -468,6 +478,10 @@ footer p {
   .Header .beerTab {
     width: 40px;
     height: 40px;
+  }
+
+  .click {
+    right: 10%;
   }
 }
 
@@ -535,6 +549,10 @@ footer p {
   .Food,
   .Selection {
     width: 100%;
+  }
+
+  .click {
+    right: 15%;
   }
 
   .Food {
@@ -605,14 +623,6 @@ footer p {
     height: 18%;
   }
 
-  .info {
-    font-size: 17.5px;
-  }
-
-  .plusMinus {
-    font-size: 50px;
-  }
-
   .Selection .barrelContainer {
     width: 33%;
     height: 300px;
@@ -633,6 +643,10 @@ footer p {
     width: 19.5px;
   }
   
+  .caLogo {
+    top: 3%;
+  }
+
   .logo {
     width: 42px;  
     height: 42px;
@@ -644,6 +658,7 @@ footer p {
     font-size: 13.5px;
     width: 80px;
     padding: 3px;
+    top: 3%;
   }
 
   .beerBarrelFlavour,

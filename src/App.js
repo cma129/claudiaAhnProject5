@@ -10,7 +10,6 @@ import Food from './components/Food';
 import Selection from './components/Selection';
 import Footer from './components/Footer';
 
-
 class App extends Component {
   constructor() {
     super();
@@ -122,15 +121,15 @@ class App extends Component {
             this.setState({
               foodImg: chooseRandomFood(randomFoods),
             })
-        // Custom error message
-      } else {
-          const foodErrorMessage = "There's no beer that matches this food pairing.";
-          swal({
-            title: 'Sorry',
-            text: foodErrorMessage,
-            dangerMode: true,
-          });
-      }
+    // Custom error message
+    } else {
+      const foodErrorMessage = "There's no beer that matches this food pairing.";
+      swal({
+        title: 'Sorry',
+        text: foodErrorMessage,
+        dangerMode: true,
+      });
+    }
   }
 
   //Show flavour beer info on hover & button click
@@ -146,10 +145,10 @@ class App extends Component {
         title: this.state.oneFlavourName,
         text: `${this.state.oneFlavourTagline} (Brewer's tips: ${this.state.oneFlavourBrewersTips})`,
         dangerMode: true,
-        buttons: ["Add to my selection", "Cool!"]
+        buttons: ["Cool!", "Add to my selection"]
       })
-      .then((wontAdd) => {
-        if (!wontAdd) {
+      .then((willAdd) => {
+        if (willAdd) {
         this.addingFlavourToSelection()
         }
       })
@@ -180,10 +179,10 @@ class App extends Component {
         title: this.state.oneFoodName,
           text: `${this.state.oneFoodTagline} (Brewer's tips: ${this.state.oneFoodBrewersTips})`,
           dangerMode: true,
-          buttons: ["Add to my selection", "Cool!"]
+        buttons: ["Cool!", "Add to my selection"]
       })
-      .then((wontAdd) => {
-        if (!wontAdd) {
+      .then((willAdd) => {
+        if (willAdd) {
         this.addingFoodToSelection()
         }
       })
