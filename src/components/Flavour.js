@@ -19,25 +19,6 @@ class Flavour extends Component {
         });
     }
 
-    //Show beer info on hover & button click
-    displayInfo = () => {
-        if(this.props.flavourName !== '' && this.props.flavourTagline !== '' && this.props.flavourBrewersTips !== '') {
-            swal({
-                title: this.props.flavourName,
-                text: `${this.props.flavourTagline} (Brewer's tips: ${this.props.flavourBrewersTips})`,
-                dangerMode: true,
-                button: "Cool!"
-            })
-        } else {
-            swal({
-                title: 'Oops,',
-                text: 'please search a beer.',
-                dangerMode: true,
-                button: "Oh, right!"
-            })
-        }
-    }
-
     render() {
         return(
             <section className="Flavour">
@@ -59,12 +40,7 @@ class Flavour extends Component {
                     <div>
                         <h2>pick for you</h2>
                         <div className="barrelContainer">
-                            <img className="beerBarrel beerBarrelFlavour" src={ this.props.flavourImgToDisplay ? this.props.flavourImgToDisplay : BeerBarrel } alt="Beer" />
-                            <p>{this.props.oneFlavourName}</p>
-                            <div className="overlay">
-                                <button className="info" onClick={ this.displayInfo }>Info</button>
-                                <button className="plusMinus" onClick={ this.props.addingFlavourToSelection }>+</button>
-                            </div>
+                            <img className="beerBarrel beerBarrelFlavour" src={ this.props.flavourImgToDisplay ? this.props.flavourImgToDisplay : BeerBarrel } onClick={ this.props.displayFlavourInfo } alt="Beer" />
                         </div>
                     </div>
                     <a href="#selection" className="button check">Check my selection</a>

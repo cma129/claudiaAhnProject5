@@ -133,8 +133,76 @@ class App extends Component {
       }
   }
 
+  //Show flavour beer info on hover & button click
+  displayFlavourInfo = () => {
+    const oneFlavourInfo = {
+      oneImg: this.state.oneFlavourImg,
+      oneName: this.state.oneFlavourName,
+      oneTagline: this.state.oneFlavourTagline,
+      oneBrewersTips: this.state.oneFlavourBrewersTips
+    }
+    if(this.state.oneFlavourName !== '' && this.state.oneFlavourTagline !== '' && this.state.oneFlavourBrewersTips !== '') {
+      swal({
+        title: this.state.oneFlavourName,
+        text: `${this.state.oneFlavourTagline} (Brewer's tips: ${this.state.oneFlavourBrewersTips})`,
+        dangerMode: true,
+        buttons: ["Add to my selection", "Cool!"]
+      })
+      .then((wontAdd) => {
+        if (!wontAdd) {
+        this.addingFlavourToSelection()
+        }
+      })
+    } else {
+      swal({
+        title: 'Oops,',
+        text: 'please search a beer.',
+        dangerMode: true,
+        button: "Oh, right!"
+      })
+    }
+    this.setState({
+      displayFlavourInfo: this.displayFlavourInfo,
+      oneFlavourInfo: oneFlavourInfo
+    })
+  }
+
+  //Show food beer info on hover & button click
+  displayFoodInfo = () => {
+    const oneFoodInfo = {
+      oneImg: this.state.oneFoodImg,
+      oneName: this.state.oneFoodName,
+      oneTagline: this.state.oneFoodTagline,
+      oneBrewersTips: this.state.oneFoodBrewersTips
+    }
+    if(this.state.oneFoodName !== '' && this.state.oneFoodTagline !== '' && this.state.oneFoodBrewersTips !== '') {
+      swal({
+        title: this.state.oneFoodName,
+          text: `${this.state.oneFoodTagline} (Brewer's tips: ${this.state.oneFoodBrewersTips})`,
+          dangerMode: true,
+          buttons: ["Add to my selection", "Cool!"]
+      })
+      .then((wontAdd) => {
+        if (!wontAdd) {
+        this.addingFoodToSelection()
+        }
+      })
+    } else {
+      swal({
+        title: 'Oops,',
+        text: 'please search a beer.',
+        dangerMode: true,
+        button: "Oh, right!"
+      })
+    }
+    this.setState({
+      displayFoodInfo: this.displayFoodInfo,
+      oneFoodInfo: oneFoodInfo
+    })
+  }
+
   //Add flavour image to my beer selection
-  addingFlavourToSelection = (beerSelection) => {
+  addingFlavourToSelection = () => {
     const selection = [...this.state.myBeerSelection]
     if (selection.length > 5) {
       const addingError = "You've already got 6 beers in your selection. Please remove some and try adding again.";
@@ -168,8 +236,8 @@ class App extends Component {
         dangerMode: true,
         buttons: ["Yeah", "Nope"]     
       })
-      .then((willAdd) => {
-        if (!willAdd) {
+      .then((wontAdd) => {
+        if (!wontAdd) {
           selection.push(oneFlavourInfo)
           this.setState({
             oneFlavourInfo: oneFlavourInfo,
@@ -215,8 +283,8 @@ class App extends Component {
         dangerMode: true,
         buttons: ["Yeah", "Nope"]     
       })
-      .then((willAdd) => {
-        if (!willAdd) {
+      .then((wontAdd) => {
+        if (!wontAdd) {
           selection.push(oneFoodInfo)
           this.setState({
             oneFoodInfo: oneFoodInfo,
@@ -226,6 +294,33 @@ class App extends Component {
       })
     }
   }
+
+  // Show selection beer info on 'info' button click
+    displaySelectionInfo = (i) => {
+        if (this.state.myBeerSelection[i] !== undefined) {
+            swal({
+                title: this.state.myBeerSelection[i].oneName,
+                text: `${this.state.myBeerSelection[i].oneTagline} (Brewer's tips: ${this.state.myBeerSelection[i].oneBrewersTips})`,
+                dangerMode: true,
+                buttons: ["Cool!", "Remove from my selection"]
+            })
+            .then((willRemove) => {
+              if (willRemove) {
+              this.removing(i)
+              }
+            })
+        } else if (this.state.myBeerSelection[i] === undefined) {
+            swal({
+                title: 'Oops,',
+                text: "you haven't added a beer here yet.",
+                dangerMode: true,
+                button: "Oh, right!"
+            })
+        }
+        this.setState({
+          displaySelectionInfo: this.displaySelectionInfo
+        })
+    }
 
   //Remove beer from selection on '-' click
   removing = (i) => {
@@ -261,10 +356,10 @@ class App extends Component {
         <main className="wrapper">
           <div className="picks" id="picks"></div>
           <div className="flavourFoodContainer">
-            <Flavour flavourGettingFunction={this.whichFlavour} flavourImgToDisplay={this.state.flavourImg} flavourName={this.state.oneFlavourName} flavourTagline={this.state.oneFlavourTagline} flavourBrewersTips={this.state.oneFlavourBrewersTips}  addingFlavourToSelection={this.addingFlavourToSelection} />
-            <Food foodGettingFunction={this.whichFood} foodImgToDisplay={this.state.foodImg} foodName={this.state.oneFoodName} foodTagline={this.state.oneFoodTagline} foodBrewersTips={this.state.oneFoodBrewersTips} addingFoodToSelection={this.addingFoodToSelection}/>
+            <Flavour flavourGettingFunction={this.whichFlavour} flavourImgToDisplay={this.state.flavourImg} displayFlavourInfo={this.displayFlavourInfo} addingFlavourToSelection={this.addingFlavourToSelection} />
+            <Food foodGettingFunction={this.whichFood} foodImgToDisplay={this.state.foodImg} displayFoodInfo={this.displayFoodInfo}addingFoodToSelection={this.addingFoodToSelection} />
           </div>
-          <Selection oneFlavourInfo={this.state.oneFlavourInfo} oneFoodInfo={this.state.oneFoodInfo} myBeerSelection={this.state.myBeerSelection} removing={this.removing} />
+          <Selection oneFlavourInfo={this.state.oneFlavourInfo} oneFoodInfo={this.state.oneFoodInfo} myBeerSelection={this.state.myBeerSelection} displaySelectionInfo={this.displaySelectionInfo} removing={this.removing} />
         </main>
         <Footer />
       </div>

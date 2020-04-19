@@ -19,25 +19,6 @@ class Food extends Component {
         });
     }
 
-    //Show beer info on hover & button click
-    displayInfo = () => {
-        if(this.props.foodName !== '' && this.props.foodTagline !== '' && this.props.foodBrewersTips !== '') {
-            swal({
-                title: this.props.foodName,
-                text: `${this.props.foodTagline} (Brewer's tips: ${this.props.foodBrewersTips})`,
-                dangerMode: true,
-                button: "Cool!"
-            })
-        } else {
-            swal({
-                title: 'Oops,',
-                text: 'please search a beer.',
-                dangerMode: true,
-                button: "Oh, right!"
-            })
-        }
-    }
-
     render() {
         return(
             <section className="Food"  id="food">
@@ -54,11 +35,7 @@ class Food extends Component {
                 <div>
                     <h2>pick for you</h2>
                     <div className="barrelContainer">
-                        <img className="beerBarrel beerBarrelFood" src={ this.props.foodImgToDisplay ? this.props.foodImgToDisplay : BeerBarrel } alt="Beer" />
-                        <div className="overlay">
-                            <button className="info" onClick={this.displayInfo}>Info</button>
-                            <button className="plusMinus" onClick={ this.props.addingFoodToSelection }>+</button>
-                        </div>
+                        <img className="beerBarrel beerBarrelFood" src={ this.props.foodImgToDisplay ? this.props.foodImgToDisplay : BeerBarrel } onClick={ this.props.displayFoodInfo } alt="Beer" />
                     </div>
                 </div>
                 <a href="#selection" className="button check">Check my selection</a>

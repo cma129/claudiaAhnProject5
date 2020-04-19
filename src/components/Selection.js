@@ -31,46 +31,22 @@ class Selection extends Component {
                 <h2>My Beer Selection</h2>
                 <section>
                     <div className="barrelContainer">
-                        <img className="beerBarrel beerBarrelSelection" src={ this.props.myBeerSelection[0] ? this.props.myBeerSelection[0].oneImg: BeerBarrel3 } alt="Beer" />
-                        <div className="overlay selectionOverlay">
-                            <button className="info" onClick={ () => {this.displayInfo(0)} }>Info</button>
-                            <button className="plusMinus" onClick={ () => {this.props.removing(0) } }>-</button>
-                        </div>
+                        <img className="beerBarrel beerBarrelSelection" src={ this.props.myBeerSelection[0] ? this.props.myBeerSelection[0].oneImg: BeerBarrel3 } onClick={ () => {this.props.displaySelectionInfo(0)} } alt="Beer" />
                     </div>
                     <div className="barrelContainer">
-                        <img className="beerBarrel beerBarrelSelection" src={ this.props.myBeerSelection[1] ? this.props.myBeerSelection[1].oneImg: BeerBarrel3 } alt="Beer" />
-                        <div className="overlay selectionOverlay">
-                            <button className="info" onClick={ () => {this.displayInfo(1)} }>Info</button>
-                            <button className="plusMinus" onClick={ () => {this.props.removing(1) } }>-</button>
-                        </div>
+                        <img className="beerBarrel beerBarrelSelection" src={ this.props.myBeerSelection[1] ? this.props.myBeerSelection[1].oneImg: BeerBarrel3 } onClick={ () => {this.props.displaySelectionInfo(1)} } alt="Beer" />
                     </div>
                     <div className="barrelContainer">
-                        <img className="beerBarrel beerBarrelSelection" src={ this.props.myBeerSelection[2] ? this.props.myBeerSelection[2].oneImg: BeerBarrel3 } alt="Beer" />
-                        <div className="overlay selectionOverlay">
-                            <button className="info" onClick={ () => {this.displayInfo(2)} }>Info</button>
-                            <button className="plusMinus" onClick={ () => {this.props.removing(2) } }>-</button>
-                        </div>
+                        <img className="beerBarrel beerBarrelSelection" src={ this.props.myBeerSelection[2] ? this.props.myBeerSelection[2].oneImg: BeerBarrel3 } onClick={ () => {this.props.displaySelectionInfo(2)} } alt="Beer" />
                     </div>
                     <div className="barrelContainer">
-                        <img className="beerBarrel beerBarrelSelection" src={ this.props.myBeerSelection[3] ? this.props.myBeerSelection[3].oneImg: BeerBarrel3 } alt="Beer" />
-                        <div className="overlay selectionOverlay">
-                        <button className="info" onClick={ () => {this.displayInfo(3)} }>Info</button>
-                        <button className="plusMinus" onClick={ () => {this.props.removing(3) } }>-</button>
-                        </div>
+                        <img className="beerBarrel beerBarrelSelection" src={ this.props.myBeerSelection[3] ? this.props.myBeerSelection[3].oneImg: BeerBarrel3 } onClick={ () => {this.props.displaySelectionInfo(3)} } alt="Beer" />
                     </div>
                     <div className="barrelContainer">
-                        <img className="beerBarrel beerBarrelSelection" src={ this.props.myBeerSelection[4] ? this.props.myBeerSelection[4].oneImg: BeerBarrel3 } alt="Beer" />
-                        <div className="overlay selectionOverlay">
-                            <button className="info" onClick={ () => {this.displayInfo(4)} }>Info</button>
-                            <button className="plusMinus" onClick={ () => {this.props.removing(4) } }>-</button>
-                        </div>
+                        <img className="beerBarrel beerBarrelSelection" src={ this.props.myBeerSelection[4] ? this.props.myBeerSelection[4].oneImg: BeerBarrel3 } onClick={ () => {this.props.displaySelectionInfo(4)} } alt="Beer" />
                     </div>
                     <div className="barrelContainer">
-                        <img className="beerBarrel beerBarrelSelection" src={ this.props.myBeerSelection[5] ? this.props.myBeerSelection[5].oneImg: BeerBarrel3 } alt="Beer" />
-                        <div className="overlay selectionOverlay">
-                            <button className="info" onClick={ () => {this.displayInfo(5)} }>Info</button>
-                            <button className="plusMinus" onClick={ () => {this.props.removing(5) } }>-</button>
-                        </div>
+                        <img className="beerBarrel beerBarrelSelection" src={ this.props.myBeerSelection[5] ? this.props.myBeerSelection[5].oneImg: BeerBarrel3 } onClick={ () => {this.props.displaySelectionInfo(5)} } alt="Beer" />
                     </div>
                 </section>
             </section>

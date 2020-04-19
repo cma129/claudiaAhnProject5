@@ -32,10 +32,10 @@ class Header extends Component {
                     <ol>
                         <li><p>Below, there are TWO separate sections where you can get a beer recommended. You can use just one or both.</p></li>
                         <li>
-                            <p>If you know what kind of flavour you want, choose one flavour from the options and hit the 'show me a beer' button.</p>
-                            <p>OR, if you have a food pairing in mind, type that food in and hit the 'show me a beer' button.</p>
+                            <p>If you know what kind of flavour you want, choose one flavour from the options and click 'show me a beer'.</p>
+                            <p>OR, if you have a food pairing in mind, type that food in and click 'show me a beer'.</p>
                         </li>
-                        <li><p>Check out the info, and if you like the beer picked for you, click the '+' button on the beer to add it to your selection. If you don't like it, hit the 'show me a beer' button again or try another search. Click '-' button to remove from your selection.</p></li>
+                        <li><p>Check out the info by clicking the beer, and if you like it, click 'add to my selection'. If you don't like it, click 'show me a beer' again or try another search. To remove, click 'remove from my selection'.</p></li>
                     </ol>
                     <div className="buttonContainer">
                         <a href="#picks" className="button startGot">
