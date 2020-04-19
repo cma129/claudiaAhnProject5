@@ -34,7 +34,7 @@ class Food extends Component {
                     <h2>pick for you</h2>
                     <div className="barrelContainer">
                         <img className="beerBarrel beerBarrelFood" src={ this.props.foodImgToDisplay ? this.props.foodImgToDisplay : BeerBarrel } onClick={ this.props.displayFoodInfo } alt="Beer" />
-                        <p className="click">🡸 Click on beer!</p>
+                        <p className="click">← Click on beer!</p>
                     </div>
                 </div>
             </section>

@@ -49,7 +49,7 @@ class Selection extends Component {
                         <img className="beerBarrel beerBarrelSelection" src={ this.props.myBeerSelection[5] ? this.props.myBeerSelection[5].oneImg: BeerBarrel3 } onClick={ () => {this.props.displaySelectionInfo(5)} } alt="Beer" />
                     </div>
                 </section>
-                <p className="click">🢁 Click on beer!</p>
+                <p className="click">↑ Click on beer!</p>
             </section>
         )
     }

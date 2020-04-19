@@ -667,6 +667,10 @@ footer p {
     height: 23%;
   }
 
+  .click {
+    right: 6%;
+  }
+
   .Selection .barrelContainer {
     height: 275px;
   }
