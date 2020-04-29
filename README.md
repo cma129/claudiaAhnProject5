@@ -22,3 +22,4 @@ Some things I'd love to include to improve my app:
 - hyperlinks to The Beer Store or LCBO for users to purchase picked beers (The current API's beers are not sold on The Beer Store or LCBO.)
 - hiding 'check my selection' button when the screen is showing the selection section
 - option to show similar beers without complicating the UI or UX
+- catalog page showing all beers in API with info
