@@ -16,6 +16,7 @@ My application can provide a fun environment for searching new beers and learnin
 
 ## To-Do's
 Some things I'd love to include to improve my app:
+- additional text input on top of drop down for both flavour and food sections so that users can type in what they want, too
 - use of Express.js to store user's selection data
 - log-in option to store each user's selection data
 - finding another API that I can use to provide more beer options 
