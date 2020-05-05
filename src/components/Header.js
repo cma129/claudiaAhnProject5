@@ -19,7 +19,7 @@ class Header extends Component {
                                 </div>
                                 Selection
                             </h1>
-                            <h3>Use this app to create your own beer selection based on your personal taste!</h3>                    
+                            <h3>Not sure which beer to try? Use this app to create your own beer selection based on your personal taste!</h3>                    
                         </div>
                         <div className="buttonContainer">
                             <a href="#instructions" className="button startGot">
@@ -30,12 +30,18 @@ class Header extends Component {
                 </section>
                 <section className="bottomHeader" id="instructions">
                     <ol>
-                        <li><p>Below, there are TWO separate sections where you can get a beer recommended. You can use just one or both.</p></li>
                         <li>
-                            <p>If you know what kind of flavour you want, choose one flavour from the options and click 'show me a beer'.</p>
-                            <p>OR, if you have a food pairing in mind, type that food and click 'show me a beer'.</p>
+                            <p>1. Two SEPARATE sections!</p>
+                            <p>You don't have to use both.</p>
                         </li>
-                        <li><p>Check out the info by clicking the beer, and if you like it, click 'add to my selection'. If you don't like it, click 'show me a beer' again or try another search. To remove, click 'remove from my selection'.</p></li>
+                        <li>
+                            <p>2. Choose a flavour.</p>
+                            <p>OR, choose a food pairing.</p>
+                        </li>
+                        <li>
+                            <p>3. You like the beer? Add it to your selection.</p>
+                            <p>OR, click 'show me a beer' again or choose something else!</p>
+                        </li>
                     </ol>
                     <div className="buttonContainer">
                         <a href="#picks" className="button startGot">

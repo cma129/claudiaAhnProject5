@@ -30,26 +30,32 @@ class Selection extends Component {
             <section className="Selection" id="selection">
                 <h2>My Beer Selection</h2>
                 <section>
-                    <div className="barrelContainer">
-                        <img className="beerBarrel beerBarrelSelection" src={ this.props.myBeerSelection[0] ? this.props.myBeerSelection[0].oneImg: BeerBarrel3 } onClick={ () => {this.props.displaySelectionInfo(0)} } alt="Beer" />
+                    <div className="barrelContainer" onClick={() => { this.props.displaySelectionInfo(0) }}>
+                        <img className="beerBarrel beerBarrelSelection" src={this.props.myBeerSelection[0] ? this.props.myBeerSelection[0].oneImg : BeerBarrel3} alt={this.props.myBeerSelection[0] ? this.props.myBeerSelection[0].oneName : "Beer barrel"} />
+                        <h2><span className="selectionName">{this.props.myBeerSelection[0] ? this.props.myBeerSelection[0].oneName : "Pls add beer"}</span></h2>
                     </div>
-                    <div className="barrelContainer">
-                        <img className="beerBarrel beerBarrelSelection" src={ this.props.myBeerSelection[1] ? this.props.myBeerSelection[1].oneImg: BeerBarrel3 } onClick={ () => {this.props.displaySelectionInfo(1)} } alt="Beer" />
+                    <div className="barrelContainer" onClick={() => { this.props.displaySelectionInfo(1) }}>
+                        <img className="beerBarrel beerBarrelSelection" src={this.props.myBeerSelection[1] ? this.props.myBeerSelection[1].oneImg : BeerBarrel3} alt={this.props.myBeerSelection[1] ? this.props.myBeerSelection[1].oneName : "Beer barrel"} />
+                        <h2><span className="selectionName">{this.props.myBeerSelection[1] ? this.props.myBeerSelection[1].oneName : "Pls add beer"}</span></h2>
                     </div>
-                    <div className="barrelContainer">
-                        <img className="beerBarrel beerBarrelSelection" src={ this.props.myBeerSelection[2] ? this.props.myBeerSelection[2].oneImg: BeerBarrel3 } onClick={ () => {this.props.displaySelectionInfo(2)} } alt="Beer" />
+                    <div className="barrelContainer" onClick={() => { this.props.displaySelectionInfo(2) }}>
+                        <img className="beerBarrel beerBarrelSelection" src={this.props.myBeerSelection[2] ? this.props.myBeerSelection[2].oneImg : BeerBarrel3} alt={this.props.myBeerSelection[2] ? this.props.myBeerSelection[2].oneName : "Beer barrel"} />
+                        <h2><span className="selectionName">{this.props.myBeerSelection[2] ? this.props.myBeerSelection[2].oneName : "Pls add beer"}</span></h2>
                     </div>
-                    <div className="barrelContainer">
-                        <img className="beerBarrel beerBarrelSelection" src={ this.props.myBeerSelection[3] ? this.props.myBeerSelection[3].oneImg: BeerBarrel3 } onClick={ () => {this.props.displaySelectionInfo(3)} } alt="Beer" />
+                    <div className="barrelContainer" onClick={() => { this.props.displaySelectionInfo(3) }}>
+                        <img className="beerBarrel beerBarrelSelection" src={this.props.myBeerSelection[3] ? this.props.myBeerSelection[3].oneImg : BeerBarrel3} alt={this.props.myBeerSelection[3] ? this.props.myBeerSelection[3].oneName : "Beer barrel"} />
+                        <h2><span className="selectionName">{this.props.myBeerSelection[3] ? this.props.myBeerSelection[3].oneName : "Pls add beer"}</span></h2>
                     </div>
-                    <div className="barrelContainer">
-                        <img className="beerBarrel beerBarrelSelection" src={ this.props.myBeerSelection[4] ? this.props.myBeerSelection[4].oneImg: BeerBarrel3 } onClick={ () => {this.props.displaySelectionInfo(4)} } alt="Beer" />
+                    <div className="barrelContainer" onClick={() => { this.props.displaySelectionInfo(4) }}>
+                        <img className="beerBarrel beerBarrelSelection" src={this.props.myBeerSelection[4] ? this.props.myBeerSelection[4].oneImg : BeerBarrel3} alt={this.props.myBeerSelection[4] ? this.props.myBeerSelection[4].oneName : "Beer barrel"} />
+                        <h2><span className="selectionName">{this.props.myBeerSelection[4] ? this.props.myBeerSelection[4].oneName : "Pls add beer"}</span></h2>
                     </div>
-                    <div className="barrelContainer">
-                        <img className="beerBarrel beerBarrelSelection" src={ this.props.myBeerSelection[5] ? this.props.myBeerSelection[5].oneImg: BeerBarrel3 } onClick={ () => {this.props.displaySelectionInfo(5)} } alt="Beer" />
+                    <div className="barrelContainer" onClick={() => { this.props.displaySelectionInfo(5) }}>
+                        <img className="beerBarrel beerBarrelSelection" src={this.props.myBeerSelection[5] ? this.props.myBeerSelection[5].oneImg : BeerBarrel3} alt={this.props.myBeerSelection[5] ? this.props.myBeerSelection[5].oneName : "Beer barrel"} />
+                        <h2><span className="selectionName">{this.props.myBeerSelection[5] ? this.props.myBeerSelection[5].oneName : "Pls add beer"}</span></h2>
                     </div>
                 </section>
-                <p className="click">↑ Click on beer!</p>
+                <p className="clickBeer">↑ Click on beer!</p>
             </section>
         )
     }

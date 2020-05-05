@@ -28,6 +28,8 @@ class App extends Component {
       myBeerSelection: [],
       oneFlavourInfo: {},
       oneFoodInfo: {},
+      loading: true,
+      done: false
     }
   }
 
@@ -39,7 +41,7 @@ class App extends Component {
     })
     .then( (response) => {
       this.setState({
-        allBeers: response.data
+        allBeers: response.data,
       })
     });
   }
@@ -47,14 +49,37 @@ class App extends Component {
   // Get user selection from Flavour component
   whichFlavour = (e, userFlavour) => {
     e.preventDefault();
+    axios({
+      url: 'https://api.punkapi.com/v2/beers',
+      method: 'GET',
+      responseType: 'json',
+    })
+      .then((response) => {
+        this.setState({
+          allBeers: response.data,
+          loading: true
+        })
+      });
     this.setState({
-      userFlavourSelection: userFlavour
-    }, () => this.findFlavour(userFlavour))
+      userFlavourSelection: userFlavour,
+    },
+    () => this.findFlavour(userFlavour))
   }
 
   // Get user selection from Food component
   whichFood = (e, userFood) => {
     e.preventDefault();
+    axios({
+      url: 'https://api.punkapi.com/v2/beers',
+      method: 'GET',
+      responseType: 'json',
+    })
+      .then((response) => {
+        this.setState({
+          allBeers: response.data,
+          done: false
+        })
+      });
     this.setState({
       userFoodSelection: userFood
     }, () => this.findFood(userFood))
@@ -66,6 +91,7 @@ class App extends Component {
     const randomFlavours = copyOfAllBeers.filter( (beer) => {
       return beer.description.includes(this.state.userFlavourSelection)    
     })
+
     // Pull random one
     const chooseRandomFlavour = (randomFlavours) => {
       const num = Math.floor( Math.random() * (randomFlavours.length));
@@ -78,12 +104,13 @@ class App extends Component {
         oneFlavourImg: oneFlavourImg,
         oneFlavourName: oneFlavourName,
         oneFlavourTagline: oneFlavourTagline,
-        oneFlavourBrewersTips: oneFlavourBrewersTips
+        oneFlavourBrewersTips: oneFlavourBrewersTips,
       })
       return oneFlavourImg
     }
     this.setState({
       flavourImg: chooseRandomFlavour(randomFlavours),
+      loading: false
     })
   }
 
@@ -120,6 +147,7 @@ class App extends Component {
             }
             this.setState({
               foodImg: chooseRandomFood(randomFoods),
+              done: true
             })
     // Custom error message
     } else {
@@ -355,8 +383,8 @@ class App extends Component {
         <main className="wrapper">
           <div className="picks" id="picks"></div>
           <div className="flavourFoodContainer">
-            <Flavour flavourGettingFunction={this.whichFlavour} flavourImgToDisplay={this.state.flavourImg} displayFlavourInfo={this.displayFlavourInfo} addingFlavourToSelection={this.addingFlavourToSelection} />
-            <Food foodGettingFunction={this.whichFood} foodImgToDisplay={this.state.foodImg} displayFoodInfo={this.displayFoodInfo}addingFoodToSelection={this.addingFoodToSelection} />
+            <Flavour flavourGettingFunction={this.whichFlavour} flavourImgToDisplay={this.state.flavourImg} displayFlavourInfo={this.displayFlavourInfo} oneFlavourName={this.state.oneFlavourName} oneFlavourTagline={this.state.oneFlavourTagline} addingFlavourToSelection={this.addingFlavourToSelection} loading={this.state.loading} />
+            <Food foodGettingFunction={this.whichFood} foodImgToDisplay={this.state.foodImg} displayFoodInfo={this.displayFoodInfo} oneFoodName={this.state.oneFoodName} oneFoodTagline={this.state.oneFoodTagline} addingFoodToSelection={this.addingFoodToSelection} done={this.state.done} />
           </div>
           <Selection oneFlavourInfo={this.state.oneFlavourInfo} oneFoodInfo={this.state.oneFoodInfo} myBeerSelection={this.state.myBeerSelection} displaySelectionInfo={this.displaySelectionInfo} removing={this.removing} />
         </main>
