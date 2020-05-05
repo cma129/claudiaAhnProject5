@@ -287,22 +287,6 @@ main .beerTab {
   transform: rotate(-46deg);
 }
 
-.name {
-  display: inline-block;
-  width: 30%;
-  margin: 0 auto;
-  opacity: 0;
-  position: absolute;
-  top: 33%;
-  left: 35.1%;
-  line-height: 1.1em;
-  text-align: center;
-  transition: all 0.2s linear;
-  background-color: #cca300b9;
-  border-radius: 5px;
-  padding: 10px 0 5px;
-}
-
 .barrelContainer:hover .name,
 .barrelContainer:focus-within .name {
   opacity: 1;
@@ -323,6 +307,22 @@ main .beerTab {
 
 .preloader {
   margin: 0 auto;
+}
+
+.name {
+  display: inline-block;
+  width: 30%;
+  margin: 0 auto;
+  opacity: 0;
+  position: absolute;
+  top: 33%;
+  left: 35.1%;
+  line-height: 1.1em;
+  text-align: center;
+  transition: all 0.2s linear;
+  background-color: #cca300b9;
+  border-radius: 5px;
+  padding: 10px 0 5px;
 }
 
 .swal-modal {
@@ -582,6 +582,11 @@ footer p {
   .beerBarrelSelection {
     width: 60%;
   }
+
+  .name {
+    width: 35%;
+    left: 32.5%;
+  }
 }
 
 @media(max-width: 740px) {
@@ -649,6 +654,11 @@ footer p {
   .beerBarrelFood {
     width: 13%;
     height: auto;
+  }
+
+  .name {
+    width: 25%;
+    left: 37.5%;
   }
 
   .beerBarrelSelection {
@@ -731,6 +741,10 @@ footer p {
   .beerBarrelSelection {
     width: 45%;
   }
+
+  .selectionName {
+    left: 1.5%;
+  }
 }
 
 /* Mobile */
@@ -769,12 +783,21 @@ footer p {
     right: 6%;
   }
 
+  .name {
+    width: 35%;
+    left: 33%;
+  }
+
   .Selection .barrelContainer {
     height: 275px;
   }
 
   .beerBarrelSelection {
     width: 60%;
+  }
+
+  .selectionName {
+    left: 0.3%;
   }
 }
 
@@ -803,6 +826,11 @@ footer p {
   .beerBarrelFood {
     width: 25%;
     height: auto;
+  }
+
+  .name {
+    width: 37%;
+    left: 32%;
   }
 
   .Selection h2 {
@@ -836,10 +864,15 @@ footer p {
     margin-top: -13%;
   }
 
-    .Flavour {
+  .Flavour {
     margin-top: 15%;
   }
 
+  .name {
+    width: 38%;
+    left: 31.7%;
+  }
+  
   .Selection .barrelContainer {
     height: 245px;
   }
