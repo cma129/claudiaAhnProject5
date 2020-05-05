@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d44be9b4d6adacd06c5a6827a3f6990e",
+    "revision": "0f1e731d27a7f9011dfff29e9c151f6f",
     "url": "/myBeerSelection/index.html"
   },
   {
-    "revision": "32e35c5ef605b2651971",
-    "url": "/myBeerSelection/static/css/main.b9d82200.chunk.css"
+    "revision": "034149a8b0d927ebbaab",
+    "url": "/myBeerSelection/static/css/main.b76b7834.chunk.css"
   },
   {
-    "revision": "2c3de7615b0bb6ac1046",
-    "url": "/myBeerSelection/static/js/2.8dd321c9.chunk.js"
+    "revision": "906ac975d3e1c26e1483",
+    "url": "/myBeerSelection/static/js/2.51465512.chunk.js"
   },
   {
-    "revision": "99bd0487192ec9e7d9ee8fbbd91ee444",
-    "url": "/myBeerSelection/static/js/2.8dd321c9.chunk.js.LICENSE.txt"
+    "revision": "eee9ad91ef84ed45eebd56179d5a21db",
+    "url": "/myBeerSelection/static/js/2.51465512.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "32e35c5ef605b2651971",
-    "url": "/myBeerSelection/static/js/main.29cd4dda.chunk.js"
+    "revision": "034149a8b0d927ebbaab",
+    "url": "/myBeerSelection/static/js/main.5f9a0a51.chunk.js"
   },
   {
     "revision": "1cb6a9d61bad88adf6c6",
