@@ -16,12 +16,12 @@ My application can provide a fun environment for searching new beers and learnin
 
 ## To-Do's
 Some things I'd love to include to improve my app:
-- additional text input on top of drop down for both flavour and food sections so that users can type in what they want, too
+- additional text input as part of drop down for both flavour and food sections so that users can type in what they want, too
 - use of Express.js to store user's selection data
-- log-in option to store each user's selection data
+- log-in option to store each user's personalized selection data
 - finding another API that I can use to provide more beer options 
 - hyperlinks to The Beer Store or LCBO for users to purchase picked beers (The current API's beers are not sold on The Beer Store or LCBO.)
-- another section to recommend beers based on types (The current API data structure cannot show various beers by type.)
+- another 'beer type' section to recommend beers based on types (The current API data structure cannot show various beers by type.)
 - hiding 'check my selection' button when the screen is showing the selection section
-- option to show similar beers without complicating the UI or UX
-- catalog page showing all beers in API with info
+- option to show 'similar beers' without complicating the UI or UX
+- catalog page showing all beers in the API with info
