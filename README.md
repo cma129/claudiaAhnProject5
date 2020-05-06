@@ -19,7 +19,7 @@ After cloning this repository, run npm install in the root directory to install 
 
 ## Structure
 The main part of the application is in the App.js file found at src/App.js.
-#### Components
+#### Components:
 - Header
 - Flavour
 - Food
