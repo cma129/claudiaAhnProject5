@@ -10,6 +10,7 @@ import Food from './components/Food';
 import Selection from './components/Selection';
 import Footer from './components/Footer';
 
+
 class App extends Component {
   constructor() {
     super();

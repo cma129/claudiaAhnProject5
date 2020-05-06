@@ -6,6 +6,20 @@ import BeerBarrel3 from "../assets/beerBarrel3.png";
 
 class Selection extends Component {
 
+    constructor() {
+        super();
+        this.state = {
+            facebookLink: `https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fclaudiaahn.com%2FmyBeerSelection&quote=My%20Beer%20Selection%3A%20Buzz%2C%20White%2C%20Hey%2C%20Two%2C%20One%2C%20Three`,
+            titleToBeReplaced: ""
+        }
+    }
+    shareLink = () => {
+        const titleToBeReplaced = this.props.myBeerSelection[0].oneName;
+        this.setState ({
+            titleToBeReplaced: titleToBeReplaced
+        })
+    }
+
     // Show beer info on 'info' button click
     displayInfo = (i) => {
         if (this.props.myBeerSelection[i] !== undefined) {
@@ -24,7 +38,7 @@ class Selection extends Component {
             })
         }
     }
-        
+
     render() {
         return(
             <section className="Selection" id="selection">
