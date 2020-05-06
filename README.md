@@ -14,6 +14,18 @@ My application can provide a fun environment for searching new beers and learnin
 - CSS3
 - HTML5
 
+## Getting up and running
+After cloning this repository, run npm install in the root directory to install the dependencies. As soon as all of them are installed, you can npm start in the root directory and open 0.0.0.0:3000 in your browser to see your local copy of the app.
+
+## Structure
+The main part of the application is rendered in the App component found at src/App.js.
+### Components
+- Header
+- Flavour
+- Food
+- Selection
+- Footer
+
 ## To-Do's
 Some things I'd love to include to improve my app:
 - additional text input as part of drop down for both flavour and food sections so that users can type in what they want, too
