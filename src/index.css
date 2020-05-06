@@ -495,7 +495,6 @@ footer ul {
   transition: 25ms ease-out;
   padding: 0.5em 0.75em 0.2em;
   background-color: #231f20;
-
 }
 
 .sharingIcon {
@@ -720,6 +719,10 @@ footer p {
     font-size: 15px;
     width: 100%;
   }
+
+  .hideSocial {
+    display: none;
+  }
 }
 
 @media(max-width: 600px) {
@@ -795,6 +798,18 @@ footer p {
 
   .selectionName {
     left: 1.5%;
+  }
+
+  .link {
+    text-align: center;
+  }
+
+  .sharingIcon svg {
+    margin: 0;
+  }
+
+  footer p {
+    text-align: center;
   }
 }
 
