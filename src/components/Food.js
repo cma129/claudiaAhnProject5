@@ -23,7 +23,7 @@ class Food extends Component {
         return(
             <section className="Food"  id="food">
                 <form action="">
-                    <label htmlFor="whichFood">Some food you wanna pair it with?</label>
+                    <label htmlFor="whichFood">Food you wanna pair it with?</label>
                     <div className="selectionLine">
                         <select onChange={this.getUserFood} id="whichFood" name="whichFood">
                             <option value="cheese">Cheese</option>

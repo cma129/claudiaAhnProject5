@@ -8,6 +8,7 @@ import Header from './components/Header';
 import Flavour from './components/Flavour';
 import Food from './components/Food';
 import Selection from './components/Selection';
+import DisplayAll from './components/DisplayAll';
 import Footer from './components/Footer';
 
 
@@ -29,8 +30,10 @@ class App extends Component {
       myBeerSelection: [],
       oneFlavourInfo: {},
       oneFoodInfo: {},
+      catalogInfo: {},
       loading: true,
-      done: false
+      done: false,
+      isHidden: true
     }
   }
 
@@ -232,14 +235,7 @@ class App extends Component {
   //Add flavour image to my beer selection
   addingFlavourToSelection = () => {
     const selection = [...this.state.myBeerSelection]
-    if (selection.length > 5) {
-      const addingError = "You've already got 6 beers in your selection. Please remove some and try adding again.";
-      swal({
-        title: 'Sorry',
-        text: addingError,
-        dangerMode: true,
-      })
-    } else if(this.state.oneFlavourImg === '') {
+    if(this.state.oneFlavourImg === '') {
       swal({
         title: 'Oops,',
         text: 'please search a beer.',
@@ -252,13 +248,20 @@ class App extends Component {
         text: "looks like you've already got this beer in your selection.",
         dangerMode: true,
       })
+    } else if (selection.length > 5) {
+      const addingError = "You've already got 6 beers in your selection. Please remove some and try adding again.";
+      swal({
+        title: 'Sorry',
+        text: addingError,
+        dangerMode: true,
+      })
     } else {
       const oneFlavourInfo = {
         oneImg: this.state.oneFlavourImg,
         oneName: this.state.oneFlavourName,
         oneTagline: this.state.oneFlavourTagline,
         oneBrewersTips: this.state.oneFlavourBrewersTips
-      }
+    }
       swal({
         title: 'You want to add this one, right?',
         dangerMode: true,
@@ -279,14 +282,7 @@ class App extends Component {
   //Add food image to my beer selection
   addingFoodToSelection = (beerSelection) => {
     const selection = [...this.state.myBeerSelection]
-    if (selection.length > 5) {
-      const addingError = "You've already got 6 beers in your selection. Please remove some and try adding again.";
-      swal({
-        title: 'Sorry',
-        text: addingError,
-        dangerMode: true,
-      })
-    } else if(this.state.oneFoodImg === '') {
+    if(this.state.oneFoodImg === '') {
       swal({
         title: 'Oops,',
         text: 'please search a beer.',
@@ -297,6 +293,13 @@ class App extends Component {
       swal({
         title: 'Oh,',
         text: "looks like you've already got this beer in your selection.",
+        dangerMode: true,
+      })
+    } else if (selection.length > 5) {
+      const addingError = "You've already got 6 beers in your selection. Please remove some and try adding again.";
+      swal({
+        title: 'Sorry',
+        text: addingError,
         dangerMode: true,
       })
     } else {
@@ -377,6 +380,78 @@ class App extends Component {
     }
   }
 
+  //Show catalogue beer info on hover & button click
+  displayInfo = (i) => {
+    const info = {
+      image: this.state.allBeers[i].image_url,
+      name: this.state.allBeers[i].name,
+      tagLine: this.state.allBeers[i].tagline,
+      brewersTips: this.state.allBeers[i].brewers_tips
+    }
+    swal({
+        title: info.name,
+        text: `${info.tagLine} (Brewer's tips: ${info.brewersTips})`,
+        dangerMode: true,
+        buttons: ["Cool!", "Add to my selection"]
+    })
+    .then((willAdd) => {
+      if (willAdd) {
+        this.addingToSelection(i)
+      }
+    })
+    this.setState({
+      displayInfo: this.displayInfo,
+      info: info
+    })
+  }
+
+    //Add image to my beer selection
+    addingToSelection = (i) => {
+      const selection = [...this.state.myBeerSelection]
+      if (selection.some(e => e.oneName === this.state.info.name)) {  
+        swal({
+          title: 'Oh,',
+          text: "looks like you've already got this beer in your selection.",
+          dangerMode: true,
+        })
+      } else if (selection.length > 5) {
+        const addingError = "You've already got 6 beers in your selection. Please remove some and try adding again.";
+        swal({
+          title: 'Sorry',
+          text: addingError,
+          dangerMode: true,
+        })
+      } else {
+        const catalogInfo = {
+          oneImg: this.state.allBeers[i].image_url,
+          oneName: this.state.allBeers[i].name,
+          oneTagLine: this.state.allBeers[i].tagline,
+          oneBrewersTips: this.state.allBeers[i].brewers_tips
+        }
+        swal({
+          title: 'You want to add this one, right?',
+          dangerMode: true,
+          buttons: ["Yeah", "Nope"]     
+        })
+        .then((wontAdd) => {
+          if (!wontAdd) {
+            selection.push(catalogInfo)
+            this.setState({
+              addingToSelection: this.addingToSelection,
+              catalogInfo: catalogInfo,
+              myBeerSelection: selection,
+            })
+          }
+        })
+      }
+    }
+  
+    toggleHidden () {
+      this.setState({
+        isHidden: !this.state.isHidden
+      })
+    }
+
   render () {
     return (
       <div className="App">
@@ -384,10 +459,18 @@ class App extends Component {
         <main className="wrapper">
           <div className="picks" id="picks"></div>
           <div className="flavourFoodContainer">
-            <Flavour flavourGettingFunction={this.whichFlavour} flavourImgToDisplay={this.state.flavourImg} displayFlavourInfo={this.displayFlavourInfo} oneFlavourName={this.state.oneFlavourName} oneFlavourTagline={this.state.oneFlavourTagline} addingFlavourToSelection={this.addingFlavourToSelection} loading={this.state.loading} />
-            <Food foodGettingFunction={this.whichFood} foodImgToDisplay={this.state.foodImg} displayFoodInfo={this.displayFoodInfo} oneFoodName={this.state.oneFoodName} oneFoodTagline={this.state.oneFoodTagline} addingFoodToSelection={this.addingFoodToSelection} done={this.state.done} />
+            <Flavour flavourGettingFunction={this.whichFlavour} flavourImgToDisplay={this.state.flavourImg} displayFlavourInfo={this.displayFlavourInfo} oneFlavourName={this.state.oneFlavourName} oneFlavourTagline={this.state.oneFlavourTagline} loading={this.state.loading} />
+            <Food foodGettingFunction={this.whichFood} foodImgToDisplay={this.state.foodImg} displayFoodInfo={this.displayFoodInfo} oneFoodName={this.state.oneFoodName} oneFoodTagline={this.state.oneFoodTagline} done={this.state.done} />
           </div>
           <Selection oneFlavourInfo={this.state.oneFlavourInfo} oneFoodInfo={this.state.oneFoodInfo} myBeerSelection={this.state.myBeerSelection} displaySelectionInfo={this.displaySelectionInfo} removing={this.removing} />
+          <section className="showContainer">
+            <p></p>
+            <p className="clickBeer">{this.state.isHidden ? "" : "↓ Click beer for details!"}</p>
+            <div>
+              <button className="show" onClick={this.toggleHidden.bind(this)}>{this.state.isHidden ? "Show all beers" : "Hide"}</button>
+            </div>
+          </section>
+          {!this.state.isHidden && <DisplayAll displayInfo={this.displayInfo} myBeerSelection={this.state.myBeerSelection}/>}
         </main>
         <Footer />
       </div>

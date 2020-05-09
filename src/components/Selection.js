@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import swal from 'sweetalert';
-
 import BeerBarrel3 from "../assets/beerBarrel3.png";
 
 class Selection extends Component {
@@ -20,29 +18,11 @@ class Selection extends Component {
         })
     }
 
-    // Show beer info on 'info' button click
-    displayInfo = (i) => {
-        if (this.props.myBeerSelection[i] !== undefined) {
-            swal({
-                title: this.props.myBeerSelection[i].oneName,
-                text: `${this.props.myBeerSelection[i].oneTagline} (Brewer's tips: ${this.props.myBeerSelection[i].oneBrewersTips})`,
-                dangerMode: true,
-                button: "Cool!"
-            })
-        } else if (this.props.myBeerSelection[i] === undefined) {
-            swal({
-                title: 'Oops,',
-                text: "you haven't added a beer here yet.",
-                dangerMode: true,
-                button: "Oh, right!"
-            })
-        }
-    }
-
     render() {
         return(
             <section className="Selection" id="selection">
                 <h2>My Beer Selection</h2>
+                <p className="clickBeer">↓ Click beer for details!</p>
                 <section>
                     <div className="barrelContainer" onClick={() => { this.props.displaySelectionInfo(0) }}>
                         <img className="beerBarrel beerBarrelSelection" src={this.props.myBeerSelection[0] ? this.props.myBeerSelection[0].oneImg : BeerBarrel3} alt={this.props.myBeerSelection[0] ? this.props.myBeerSelection[0].oneName : "Beer barrel"} />
@@ -69,7 +49,6 @@ class Selection extends Component {
                         <h2><span className="selectionName">{this.props.myBeerSelection[5] ? this.props.myBeerSelection[5].oneName : "Pls add beer"}</span></h2>
                     </div>
                 </section>
-                <p className="clickBeer">↑ Click on beer!</p>
             </section>
         )
     }
