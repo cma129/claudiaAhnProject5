@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import axios from 'axios';
+import ReactLoading from "react-loading";
 
 class DisplayAll extends Component {
     constructor() {
@@ -8,6 +9,7 @@ class DisplayAll extends Component {
       this.state = {
         allBeers: [],
         myBeerSelection: [],
+        loaded: false
       }
     }
 
@@ -19,7 +21,8 @@ class DisplayAll extends Component {
     })
     .then((res) => {
       this.setState({
-        allBeers: res.data
+        allBeers: res.data,
+        loaded: true
       });
     });
   }
@@ -30,7 +33,7 @@ class DisplayAll extends Component {
         {this.state.allBeers.map((beer, i) => {
           return (
             <div key={beer.id} className="catalog" >
-              <img src={beer.image_url} alt={beer.name} onClick={() => { this.props.displayInfo(i) }} />
+              {this.state.loaded ? <img src={beer.image_url} alt={beer.name} onClick={() => { this.props.displayInfo(i) }} /> : (<ReactLoading type={"bubbles"} color={"#e0e0e2"} height={'40%'} width={'40%'} className={"preloader"} />)}
               <h2><span className="catalogName" onClick={() => { this.props.displayInfo(i) }}>{this.state.allBeers[i].name}</span></h2>
             </div>
           )
