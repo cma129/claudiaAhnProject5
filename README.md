@@ -10,7 +10,7 @@ My application can provide a fun environment for searching new beers and learnin
 
 ## Built with:
 - React
-- API
+- PUNK REST API
 - CSS3
 - HTML5
 
